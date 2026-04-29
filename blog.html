@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — AI Prompts, Tools & Guides for Business Owners | Vubration</title>
+  <meta name="description" content="Free AI guides, prompt templates, and playbooks for business owners. Real estate, contractors, lawyers, dentists, gyms, restaurants — practical AI that works today.">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://vubration.com/blog.html">
+  <meta property="og:title"       content="Vubration Blog — AI for Business Owners">
+  <meta property="og:description" content="Free AI guides, prompt templates, and playbooks for business owners. Copy, paste, get results.">
+  <meta property="og:image"       content="https://vubration.com/og-image.png">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@Vubration33">
+  <meta name="twitter:title"       content="Vubration Blog — AI for Business Owners">
+  <meta name="twitter:description" content="Free AI guides, prompt templates, and playbooks for business owners.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="canonical" href="https://vubration.com/blog.html">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Blog-specific styles */
+    .blog-hero {
+      position: relative;
+      padding: 80px 0 64px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    .blog-hero-orb {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6,255,165,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(80px);
+      top: -150px;
+      right: -100px;
+      pointer-events: none;
+      animation: float 12s ease-in-out infinite;
+    }
+    .blog-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+    .blog-hero-content h1 { margin-bottom: 16px; }
+    .blog-hero-content p {
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    /* Filter tabs */
+    .blog-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .filter-btn {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.02);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--border-hover);
+      color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    /* Blog grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card), 0 0 30px rgba(0,180,216,0.06);
+      background: var(--bg-card-hover);
+    }
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .blog-category {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(0,180,216,0.1);
+      border: 1px solid rgba(0,180,216,0.2);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+    .blog-date {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: var(--font-display);
+    }
+    .blog-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .blog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .blog-read-more {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: var(--transition);
+    }
+    .blog-card:hover .blog-read-more { gap: 8px; }
+    .blog-read-icon {
+      font-size: 16px;
+      color: var(--text-dim);
+    }
+
+    /* Date group header */
+    .blog-date-group {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+      margin-bottom: 4px;
+    }
+    .blog-date-group:first-child { margin-top: 0; }
+    .blog-date-group h4 {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      white-space: nowrap;
+    }
+    .blog-date-group-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Stats bar */
+    .blog-stats {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .blog-stat-item { display: flex; align-items: center; gap: 10px; }
+    .blog-stat-val {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .blog-stat-label { font-size: 13px; color: var(--text-muted); }
+
+    @media (max-width: 1024px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .blog-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html">VU<span>BR</span>ATION</a>
+  <div class="nav-links">
+    <a href="index.html#products">Products</a>
+    <a href="pocket-agent.html">Pocket Agent</a>
+    <a href="prompt-packs.html">Prompt Packs</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="mailto:dimitris33ai@icloud.com">Contact</a>
+    <a href="https://vubration.gumroad.com" target="_blank" rel="noopener" class="nav-cta">Shop Now →</a>
+  </div>
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="index.html">← Home</a>
+  <a href="index.html#products">All Products</a>
+  <a href="pocket-agent.html">Pocket Agent AI</a>
+  <a href="prompt-packs.html">AI Prompt Packs</a>
+  <a href="distributor.html">Distributor System</a>
+  <a href="blueprint.html">Business Blueprint</a>
+  <a href="orthoops.html">OrthoOps AI</a>
+  <a href="https://vubration.gumroad.com" target="_blank" rel="noopener" class="mobile-cta">Shop on Gumroad →</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════ -->
+<section class="blog-hero" aria-label="Blog">
+  <div class="blog-hero-bg"></div>
+  <div class="blog-hero-orb"></div>
+
+  <div class="container">
+    <div class="blog-hero-content">
+      <span class="tag">Free Resources</span>
+      <h1>AI Guides for<br><span class="gradient-text">Real Business Owners.</span></h1>
+      <p>
+        No theory. No fluff. Practical AI playbooks, prompt templates, and strategies
+        you can use today — written for contractors, agents, lawyers, and everyone in between.
+      </p>
+
+      <div class="blog-stats">
+        <div class="blog-stat-item">
+          <div class="blog-stat-val">25<span class="text-accent">+</span></div>
+          <div class="blog-stat-label">Free articles</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="blog-stat-item">
+          <div class="blog-stat-val">300<span class="text-accent">+</span></div>
+          <div class="blog-stat-label">Industries covered</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="blog-stat-item">
+          <div class="blog-stat-val">0</div>
+          <div class="blog-stat-label">Paywalls. Ever.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     BLOG POSTS
+     ═══════════════════════════════════════════════════════ -->
+<section style="padding:64px 0 100px;" aria-label="Blog posts">
+  <div class="container">
+
+    <!-- Filters -->
+    <div class="blog-filters">
+      <button class="filter-btn active">All Posts</button>
+      <button class="filter-btn">Real Estate</button>
+      <button class="filter-btn">Contractors</button>
+      <button class="filter-btn">Legal</button>
+      <button class="filter-btn">Medical</button>
+      <button class="filter-btn">Prompts & Templates</button>
+      <button class="filter-btn">AI Tools</button>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+
+      <!-- ── April 19, 2026 ───────────────────────────── -->
+      <div class="blog-date-group">
+        <h4>April 19, 2026</h4>
+        <div class="blog-date-group-line"></div>
+      </div>
+
+      <a href="blog/best-chatgpt-prompts-for-business-owners-ultimate-pack.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Prompts</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>The Best ChatGPT Prompts for Business Owners (2026): Complete Cross-Industry Library</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">📦</span>
+        </div>
+      </a>
+
+      <a href="blog/best-ai-tools-for-small-business-owners-2026.html" class="blog-card reveal" style="transition-delay:0.06s">
+        <div class="blog-card-meta">
+          <span class="blog-category">AI Tools</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>Best AI Tools for Small Business Owners (2026): Complete Toolkit Guide</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🛠️</span>
+        </div>
+      </a>
+
+      <a href="blog/best-ai-tools-for-real-estate-agents-2026.html" class="blog-card reveal" style="transition-delay:0.12s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Real Estate</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>Best AI Tools for Real Estate Agents (2026): Complete Toolkit Guide</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🏠</span>
+        </div>
+      </a>
+
+      <a href="blog/best-ai-tools-for-lawyers-2026.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Legal</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>Best AI Tools for Lawyers &amp; Law Firms (2026): Complete Toolkit Guide</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">⚖️</span>
+        </div>
+      </a>
+
+      <a href="blog/best-ai-tools-for-contractors-2026.html" class="blog-card reveal" style="transition-delay:0.06s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Contractors</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>Best AI Tools for Contractors &amp; Home Service Businesses (2026)</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🔧</span>
+        </div>
+      </a>
+
+      <a href="blog/hipaa-safe-ai-prompts-medical-office.html" class="blog-card reveal" style="transition-delay:0.12s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Medical</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>HIPAA-Safe AI Prompts for Medical Offices: What Actually Works in 2026</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🏥</span>
+        </div>
+      </a>
+
+      <a href="blog/chatgpt-prompts-for-lawyers-law-firms.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Legal</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>ChatGPT Prompts for Lawyers and Law Firms: 40+ Copy-Paste Templates for 2026</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">⚖️</span>
+        </div>
+      </a>
+
+      <a href="blog/chatgpt-prompts-for-ecommerce-shopify-store-owners.html" class="blog-card reveal" style="transition-delay:0.06s">
+        <div class="blog-card-meta">
+          <span class="blog-category">E-commerce</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>ChatGPT Prompts for E-commerce &amp; Shopify Store Owners: Copy-Paste Templates That Sell</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🛍️</span>
+        </div>
+      </a>
+
+      <a href="blog/chatgpt-prompts-for-insurance-agents.html" class="blog-card reveal" style="transition-delay:0.12s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Insurance</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>ChatGPT Prompts for Insurance Agents: Copy-Paste Templates That Close More Policies</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🛡️</span>
+        </div>
+      </a>
+
+      <a href="blog/chatgpt-prompts-for-personal-trainers-fitness-coaches.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Fitness</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>ChatGPT Prompts for Personal Trainers and Fitness Coaches: Copy-Paste Templates That Save Hours</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">💪</span>
+        </div>
+      </a>
+
+      <a href="blog/chatgpt-prompts-for-property-managers.html" class="blog-card reveal" style="transition-delay:0.06s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Property Mgmt</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>ChatGPT Prompts for Property Managers: Copy-Paste Templates That Save Hours Every Week</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🏢</span>
+        </div>
+      </a>
+
+      <a href="blog/ai-prompts-for-home-service-businesses.html" class="blog-card reveal" style="transition-delay:0.12s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Contractors</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>AI Prompts for Home Service Businesses: 15 ChatGPT Templates That Actually Work</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🏠</span>
+        </div>
+      </a>
+
+      <a href="blog/how-to-write-sop-employees-will-follow-ai.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Operations</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>How to Write an SOP Your Employees Will Actually Follow (AI Does It in 5 Minutes)</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">📋</span>
+        </div>
+      </a>
+
+      <a href="blog/google-reviews-text-message-ai-prompt.html" class="blog-card reveal" style="transition-delay:0.06s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Marketing</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>The 60-Word Text That Gets You More Google Reviews (Use This AI Prompt)</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">⭐</span>
+        </div>
+      </a>
+
+      <a href="blog/3-sentence-upsell-script-small-business-ai-prompt.html" class="blog-card reveal" style="transition-delay:0.12s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Sales</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>The 3-Sentence Upsell Script That Adds Revenue Without Being Pushy (AI Prompt)</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">💰</span>
+        </div>
+      </a>
+
+      <a href="blog/your-1-star-review-response-isnt-for-the-angry-customer.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Marketing</span>
+          <span class="blog-date">Apr 19, 2026</span>
+        </div>
+        <h3>Your 1-Star Review Response Isn't for the Angry Customer. It's for Everyone Else.</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🌟</span>
+        </div>
+      </a>
+
+      <!-- ── April 18, 2026 ───────────────────────────── -->
+      <div class="blog-date-group" style="margin-top:32px;">
+        <h4>April 18, 2026</h4>
+        <div class="blog-date-group-line"></div>
+      </div>
+
+      <a href="blog/ai-prompts-for-small-business-owners.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Prompts</span>
+          <span class="blog-date">Apr 18, 2026</span>
+        </div>
+        <h3>AI Prompts for Small Business Owners: 20 Copy-Paste Templates That Actually Work</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">📦</span>
+        </div>
+      </a>
+
+      <a href="blog/chatgpt-prompts-for-real-estate-agents.html" class="blog-card reveal" style="transition-delay:0.06s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Real Estate</span>
+          <span class="blog-date">Apr 18, 2026</span>
+        </div>
+        <h3>ChatGPT Prompts for Real Estate Agents: 10 Copy-Paste Examples That Work</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🏠</span>
+        </div>
+      </a>
+
+      <a href="blog/chatgpt-templates-for-contractors.html" class="blog-card reveal" style="transition-delay:0.12s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Contractors</span>
+          <span class="blog-date">Apr 18, 2026</span>
+        </div>
+        <h3>ChatGPT Templates for Contractors: Copy-Paste Prompts That Win More Jobs</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🔧</span>
+        </div>
+      </a>
+
+      <a href="blog/expired-listing-voicemail-scripts.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Real Estate</span>
+          <span class="blog-date">Apr 18, 2026</span>
+        </div>
+        <h3>Expired Listing Voicemail Scripts That Actually Get Callbacks</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">📞</span>
+        </div>
+      </a>
+
+      <a href="blog/how-to-leave-expired-listing-voicemail.html" class="blog-card reveal" style="transition-delay:0.06s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Real Estate</span>
+          <span class="blog-date">Apr 18, 2026</span>
+        </div>
+        <h3>How to Leave an Expired Listing Voicemail That Actually Gets Callbacks</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">📞</span>
+        </div>
+      </a>
+
+      <a href="blog/fix-underperforming-listing-ai-prompt.html" class="blog-card reveal" style="transition-delay:0.12s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Real Estate</span>
+          <span class="blog-date">Apr 18, 2026</span>
+        </div>
+        <h3>Fix Your Underperforming Listing With One AI Prompt</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🏡</span>
+        </div>
+      </a>
+
+      <a href="blog/buyer-objection-wait-for-market-to-cool-down.html" class="blog-card reveal">
+        <div class="blog-card-meta">
+          <span class="blog-category">Real Estate</span>
+          <span class="blog-date">Apr 18, 2026</span>
+        </div>
+        <h3>When Your Buyer Says "We'll Wait for the Market to Cool Down"</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🏘️</span>
+        </div>
+      </a>
+
+      <a href="blog/stop-asking-how-many-bedrooms-buyer-consultation-questions.html" class="blog-card reveal" style="transition-delay:0.06s">
+        <div class="blog-card-meta">
+          <span class="blog-category">Real Estate</span>
+          <span class="blog-date">Apr 18, 2026</span>
+        </div>
+        <h3>Stop Asking "How Many Bedrooms?" — Better Buyer Consultation Questions</h3>
+        <div class="blog-card-footer">
+          <span class="blog-read-more">Read More →</span>
+          <span class="blog-read-icon">🤔</span>
+        </div>
+      </a>
+
+    </div><!-- /blog-grid -->
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CTA
+     ═══════════════════════════════════════════════════════ -->
+<section class="cta-section" aria-label="CTA">
+  <div class="container">
+    <div class="cta-box reveal">
+      <span class="tag">Ready for More?</span>
+      <h2>The guides are free.<br><span class="gradient-text">The tools are even better.</span></h2>
+      <p>
+        If the blog posts are helping, imagine what a full prompt pack or AI assistant could do.
+        Our paid products go 10x deeper — built for your exact industry.
+      </p>
+      <div class="cta-actions">
+        <a href="prompt-packs.html" class="btn-primary btn-lg">Browse Prompt Packs — from $7</a>
+        <a href="pocket-agent.html" class="btn-ghost btn-lg">Get Pocket Agent — $20/mo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html" style="display:inline-flex;margin-bottom:14px;">VU<span>BR</span>ATION</a>
+        <p>AI-powered tools, automations, and systems for businesses across every industry. We build AI that works — not hype, not demos. Deployable today.</p>
+        <div class="footer-socials">
+          <a href="https://twitter.com/Vubration33" target="_blank" rel="noopener" class="social-link" title="Twitter/X" aria-label="Twitter">𝕏</a>
+          <a href="https://github.com/Vubration" target="_blank" rel="noopener" class="social-link" title="GitHub" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+          <a href="https://vubration.gumroad.com" target="_blank" rel="noopener" class="social-link" title="Gumroad" aria-label="Gumroad">G</a>
+          <a href="mailto:dimitris33ai@icloud.com" class="social-link" title="Email" aria-label="Email">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="pocket-agent.html">Pocket Agent AI</a></li>
+          <li><a href="prompt-packs.html">AI Prompt Packs</a></li>
+          <li><a href="distributor.html">Distributor System</a></li>
+          <li><a href="blueprint.html">Business Blueprint</a></li>
+          <li><a href="orthoops.html">OrthoOps AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mailto:dimitris33ai@icloud.com">Contact</a></li>
+          <li><a href="https://vubration.gumroad.com" target="_blank" rel="noopener">Shop on Gumroad</a></li>
+          <li><a href="https://twitter.com/Vubration33" target="_blank" rel="noopener">Twitter/X</a></li>
+          <li><a href="https://github.com/Vubration" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="blog.html">Free Guides</a></li>
+          <li><a href="https://vubration.gumroad.com" target="_blank" rel="noopener">All Downloads</a></li>
+          <li><a href="mailto:dimitris33ai@icloud.com">Support</a></li>
+          <li><a href="https://orthoopsai.com" target="_blank" rel="noopener">OrthoOps AI Site</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Vubration LLC · All rights reserved · Digital products delivered instantly</p>
+      <p>Built with AI. Powered by ambition. <a href="mailto:dimitris33ai@icloud.com">dimitris33ai@icloud.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  // Filter button behavior (client-side UI only)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

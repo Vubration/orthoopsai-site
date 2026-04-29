@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="mCfqp4pYuRgDHBJvhjfiG9vyYq47NzoCVZVMH7UlB7A" />
+
+  <title>Vubration — AI That Runs Your Business</title>
+  <meta name="description" content="Vubration builds AI-powered tools, automations, and systems for businesses across every industry. From $20/month Telegram AI assistants to enterprise operations platforms.">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://vubration.com/">
+  <meta property="og:title"       content="Vubration — AI That Runs Your Business">
+  <meta property="og:description" content="AI-powered tools, automations, and systems for businesses across every industry. Deploy today. No dev team required.">
+  <meta property="og:image"       content="https://vubration.com/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@Vubration33">
+  <meta name="twitter:title"       content="Vubration — AI That Runs Your Business">
+  <meta name="twitter:description" content="AI-powered tools, automations, and systems for businesses across every industry.">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://vubration.com/">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Page-specific additions */
+    .hero .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    @media (max-width: 640px) { .hero .container { padding: 0 20px; } }
+
+    /* Industry marquee separator */
+    .marquee-wrap { overflow: hidden; width: 100%; }
+
+    /* Hero terminal card */
+    .hero-visual {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 340px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: none;
+      z-index: 2;
+      box-shadow: var(--shadow-card), 0 0 60px rgba(0,180,216,0.08);
+    }
+    .hero-visual-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .vbar-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .vbar-dot-r { background: #ff5f57; }
+    .vbar-dot-y { background: #febc2e; }
+    .vbar-dot-g { background: #28c840; }
+    .hero-terminal-line {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 2;
+    }
+    .hero-terminal-line .t-accent { color: var(--accent); }
+    .hero-terminal-line .t-green  { color: var(--accent-green); }
+    .hero-terminal-line .t-white  { color: var(--text); }
+    .hero-terminal-line .t-dim    { color: var(--text-dim); opacity: 0.6; }
+    .cursor { animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    @media (min-width: 1100px) {
+      .hero .container { max-width: none; padding: 0 80px; }
+      .hero-visual { display: block; }
+      .hero-content { max-width: 640px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html">VU<span>BR</span>ATION</a>
+
+  <div class="nav-links">
+    <a href="#products">Products</a>
+    <a href="pocket-agent.html">Pocket Agent</a>
+    <a href="prompt-packs.html">Prompt Packs</a>
+    <a href="blog.html">Blog</a>
+    <a href="mailto:dimitris33ai@icloud.com">Contact</a>
+    <a href="#products" class="nav-cta">Get Started →</a>
+  </div>
+
+  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="#products">Products</a>
+  <a href="pocket-agent.html">Pocket Agent AI</a>
+  <a href="prompt-packs.html">AI Prompt Packs</a>
+  <a href="distributor.html">Distributor System</a>
+  <a href="blueprint.html">Business Blueprint</a>
+  <a href="orthoops.html">OrthoOps AI</a>
+  <a href="blog.html">Blog</a>
+  <a href="mailto:dimitris33ai@icloud.com">Contact</a>
+  <a href="#products" class="mobile-cta">Get Started →</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">AI Automation Company — Deployable Today</div>
+
+      <h1>AI That Runs Your Business<br><span class="gradient-text">While You Sleep.</span></h1>
+
+      <p class="hero-sub">
+        We build AI-powered tools, systems, and automations for businesses across every industry.
+        Not demos. Not experiments. <strong>Stuff that actually works.</strong>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary btn-lg">Explore Our Products</a>
+        <a href="pocket-agent.html" class="btn-ghost btn-lg">Pocket Agent — $20/mo →</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">300<span class="text-accent">+</span></div>
+          <div class="hero-stat-label">Industries Served</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div>
+          <div class="hero-stat-num">6</div>
+          <div class="hero-stat-label">Product Lines</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div>
+          <div class="hero-stat-num">$20</div>
+          <div class="hero-stat-label">Starting Price</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div>
+          <div class="hero-stat-num">0</div>
+          <div class="hero-stat-label">Dev Team Required</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative terminal card (desktop only) -->
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-visual-bar">
+      <div class="vbar-dot vbar-dot-r"></div>
+      <div class="vbar-dot vbar-dot-y"></div>
+      <div class="vbar-dot vbar-dot-g"></div>
+      <span style="margin-left:8px;font-size:11px;color:var(--text-dim);font-family:monospace;">pocket-agent · live</span>
+    </div>
+    <div class="hero-terminal-line"><span class="t-dim">09:14</span> <span class="t-green">✓</span> <span class="t-white">Morning briefing ready</span></div>
+    <div class="hero-terminal-line"><span class="t-dim">09:14</span> <span class="t-accent">→</span> You have 3 proposals pending</div>
+    <div class="hero-terminal-line"><span class="t-dim">09:14</span> <span class="t-accent">→</span> Follow up: Mike (3 days cold)</div>
+    <div class="hero-terminal-line"><span class="t-dim">09:15</span> <span class="t-green">✓</span> <span class="t-white">Invoice #4471 sent to client</span></div>
+    <div class="hero-terminal-line"><span class="t-dim">09:16</span> <span class="t-accent">→</span> Google Review reply drafted</div>
+    <div class="hero-terminal-line"><span class="t-dim">09:18</span> <span class="t-green">✓</span> <span class="t-white">Social post scheduled (IG + FB)</span></div>
+    <div class="hero-terminal-line"><span class="t-dim">09:19</span> <span class="t-white">What else? <span class="cursor">█</span></span></div>
+    <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+      <div style="font-size:11px;color:var(--text-dim);font-family:var(--font-display);text-transform:uppercase;letter-spacing:1px;">Pocket Agent AI</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Running 24/7 · Telegram · $20/mo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     MARQUEE — Industries
+     ═══════════════════════════════════════════════════════ -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-label">Trusted across 300+ industries</div>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <!-- First set -->
+      <div class="marquee-item">🏠 Real Estate <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🔧 HVAC & Contractors <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🦷 Dental Offices <div class="marquee-dot"></div></div>
+      <div class="marquee-item">⚖️ Law Firms <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🏥 Medical Practices <div class="marquee-dot"></div></div>
+      <div class="marquee-item">💪 Gyms & Fitness <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🛡️ Insurance Agents <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🍕 Restaurants <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🚗 Auto Dealers <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🏗️ Construction <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🛍️ Retail & E-commerce <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🏢 Property Managers <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🔬 Orthopedic Distributors <div class="marquee-dot"></div></div>
+      <div class="marquee-item">💈 Salons & Spas <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🌿 Landscaping <div class="marquee-dot"></div></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item">🏠 Real Estate <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🔧 HVAC & Contractors <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🦷 Dental Offices <div class="marquee-dot"></div></div>
+      <div class="marquee-item">⚖️ Law Firms <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🏥 Medical Practices <div class="marquee-dot"></div></div>
+      <div class="marquee-item">💪 Gyms & Fitness <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🛡️ Insurance Agents <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🍕 Restaurants <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🚗 Auto Dealers <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🏗️ Construction <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🛍️ Retail & E-commerce <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🏢 Property Managers <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🔬 Orthopedic Distributors <div class="marquee-dot"></div></div>
+      <div class="marquee-item">💈 Salons & Spas <div class="marquee-dot"></div></div>
+      <div class="marquee-item">🌿 Landscaping <div class="marquee-dot"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     INTRO
+     ═══════════════════════════════════════════════════════ -->
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-left reveal">
+        <span class="tag">About Vubration</span>
+        <h2>We build AI that works.<br>Not hype. <span class="gradient-text">Results.</span></h2>
+        <p>
+          Vubration is an AI automation company. We build practical tools for business owners
+          who are done hearing about AI and ready to actually use it. From $7 prompt packs
+          to $5K enterprise systems — we build AI for the real world.
+        </p>
+        <a href="#products" class="btn-ghost">See what we build →</a>
+      </div>
+      <div class="intro-features reveal" style="transition-delay:0.15s">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h4>Deploy Today</h4>
+          <p>Download and use immediately. No dev team, no setup calls, no 6-month onboarding.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏭</div>
+          <h4>Built for Real Business</h4>
+          <p>Every tool solves a real problem. Proposals, follow-ups, ops, communications.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h4>Scales With You</h4>
+          <p>Start with prompts at $7. Scale to a full AI-run operation. We have every rung.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h4>Your Business. Your AI.</h4>
+          <p>Your data stays yours. Your AI learns your business, not ours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PRODUCTS
+     ═══════════════════════════════════════════════════════ -->
+<section id="products" class="products-section" aria-label="Products">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Product Lines</span>
+      <h2>Six Ways to Automate<br>Your Business</h2>
+      <p>Pick your entry point. Every product works out of the box.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- 1. Pocket Agent AI -->
+      <div class="product-card featured reveal">
+        <div class="product-badge badge-blue">Most Popular</div>
+        <div class="product-icon-wrap icon-blue">🤖</div>
+        <h3>Pocket Agent AI</h3>
+        <p class="desc">
+          An AI assistant that lives in your Telegram. Answers questions, sends follow-ups, drafts emails,
+          builds SOPs, and runs your business brain 24/7. One AI. 300 industries. Your business, automated.
+        </p>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$20<span class="product-price-note">/month</span></div>
+          </div>
+        </div>
+        <a href="pocket-agent.html" class="card-cta">Get Pocket Agent →</a>
+      </div>
+
+      <!-- 2. AI Prompt Packs -->
+      <div class="product-card reveal" style="transition-delay:0.1s">
+        <div class="product-badge badge-green">Digital Downloads</div>
+        <div class="product-icon-wrap icon-green">📦</div>
+        <h3>AI Prompt Packs</h3>
+        <p class="desc">
+          Pre-built prompt toolkits for specific industries. Real estate, contractors, dentists, lawyers,
+          gyms, restaurants, insurance — copy, paste, get results in seconds. No AI expertise required.
+        </p>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$7–$47</div>
+            <div class="product-price-note">one-time download</div>
+          </div>
+        </div>
+        <a href="prompt-packs.html" class="card-cta">Browse Prompt Packs →</a>
+      </div>
+
+      <!-- 3. OpenClaw Distributor System -->
+      <div class="product-card reveal" style="transition-delay:0.2s">
+        <div class="product-badge badge-orange">For Distributors</div>
+        <div class="product-icon-wrap icon-orange">🏗️</div>
+        <h3>OpenClaw Distributor System</h3>
+        <p class="desc">
+          Complete AI operations system for distributors. 4 AI Chiefs — CIO, COO, CFO, CTO. Pricing lookup,
+          PO tracking, morning briefings, field force comms. Everything a distributor needs, automated.
+        </p>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$299</div>
+            <div class="product-price-note">one-time setup</div>
+          </div>
+        </div>
+        <a href="distributor.html" class="card-cta">See Distributor System →</a>
+      </div>
+
+      <!-- 4. OpenClaw Business Blueprint -->
+      <div class="product-card featured-green reveal" style="transition-delay:0.1s">
+        <div class="product-badge badge-gold">Build Your Own</div>
+        <div class="product-icon-wrap icon-teal">🧠</div>
+        <h3>OpenClaw Business Blueprint</h3>
+        <p class="desc">
+          The autonomous AI business operating system. 5 C-suite execs, 13 division heads, 28 worker
+          archetypes. Build your own AI-run business from the ground up. Modular, powerful, yours.
+        </p>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$29–$199</div>
+            <div class="product-price-note">3 tiers available</div>
+          </div>
+        </div>
+        <a href="blueprint.html" class="card-cta">Explore the Blueprint →</a>
+      </div>
+
+      <!-- 5. OrthoOps AI -->
+      <div class="product-card enterprise reveal" style="transition-delay:0.2s">
+        <div class="product-badge badge-purple">Enterprise</div>
+        <div class="product-icon-wrap icon-purple">🔬</div>
+        <h3>OrthoOps AI</h3>
+        <p class="desc">
+          Enterprise-grade AI operations platform built specifically for orthopedic surgical distributors.
+          Asset tracking, rep management, pricing intelligence, tray logistics — fully automated.
+        </p>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$4,999<span class="product-price-note">+</span></div>
+            <div class="product-price-note">one-time + $499/mo</div>
+          </div>
+        </div>
+        <a href="orthoops.html" class="card-cta">Visit OrthoOps AI →</a>
+      </div>
+
+      <!-- 6. Blog -->
+      <div class="product-card reveal" style="transition-delay:0.3s">
+        <div class="product-badge badge-green">Free Resources</div>
+        <div class="product-icon-wrap icon-green">📝</div>
+        <h3>Blog & Free Guides</h3>
+        <p class="desc">
+          Real-world AI guides, tutorials, and playbooks — written for business owners, not tech people.
+          How to use AI today, what actually works, and what's worth your money.
+        </p>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">Free</div>
+            <div class="product-price-note">always</div>
+          </div>
+        </div>
+        <a href="blog.html" class="card-cta">Read the Blog →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     NUMBERS
+     ═══════════════════════════════════════════════════════ -->
+<section class="numbers-section" aria-label="Stats">
+  <div class="container">
+    <div class="numbers-grid reveal">
+      <div class="number-item">
+        <div class="number-val">300<span class="accent">+</span></div>
+        <div class="number-label">Industries we automate for</div>
+      </div>
+      <div class="number-item">
+        <div class="number-val">500<span class="accent">+</span></div>
+        <div class="number-label">AI prompts available</div>
+      </div>
+      <div class="number-item">
+        <div class="number-val">6</div>
+        <div class="number-label">Products from $20 to $5K</div>
+      </div>
+      <div class="number-item">
+        <div class="number-val">24<span class="accent">/7</span></div>
+        <div class="number-label">Your AI never clocks out</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     SOCIAL PROOF
+     ═══════════════════════════════════════════════════════ -->
+<section class="proof-section" aria-label="Testimonials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Social Proof</span>
+      <h2>What Business Owners Say</h2>
+      <p>Real results from real businesses. No fluff.</p>
+    </div>
+
+    <div class="proof-grid">
+      <div class="proof-card reveal">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-quote">I used to spend 45 minutes writing a listing description. Now I paste the prompt, tweak two sentences, and I'm done in 3 minutes. Worth every penny.</p>
+        <div class="proof-author">Sarah M.</div>
+        <div class="proof-role">Real Estate Agent, Florida</div>
+      </div>
+      <div class="proof-card reveal" style="transition-delay:0.1s">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-quote">The negative review response prompts alone saved my sanity. Professional, calm, exactly what I needed without spending an hour thinking about it.</p>
+        <div class="proof-author">Marcus T.</div>
+        <div class="proof-role">Restaurant Owner</div>
+      </div>
+      <div class="proof-card reveal" style="transition-delay:0.2s">
+        <div class="proof-stars">★★★★★</div>
+        <p class="proof-quote">Bought the contractor pack for follow-up sequences. Closed two jobs in the first week that I would have lost before. That's a 50x return in week one.</p>
+        <div class="proof-author">Derek R.</div>
+        <div class="proof-role">HVAC Business Owner</div>
+      </div>
+    </div>
+
+    <div class="proof-placeholder reveal mt-32" style="transition-delay:0.3s">
+      <div class="placeholder-icon">💬</div>
+      <p>More testimonials coming soon. Running on Vubration? <a href="mailto:dimitris33ai@icloud.com" style="color:var(--accent)">Tell us your story →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CTA SECTION
+     ═══════════════════════════════════════════════════════ -->
+<section class="cta-section" aria-label="Call to action">
+  <div class="container">
+    <div class="cta-box reveal">
+      <span class="tag">Ready to Start?</span>
+      <h2>Your business runs on people. <span class="gradient-text">Ours also runs on AI.</span></h2>
+      <p>
+        Start with a $7 prompt pack and use it today. Or launch with a full AI system and never
+        look back. Either way — it starts now.
+      </p>
+      <div class="cta-actions">
+        <a href="#products" class="btn-primary btn-lg">Explore All Products</a>
+        <a href="pocket-agent.html" class="btn-ghost btn-lg">Get Pocket Agent — $20/mo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-logo" href="index.html" style="display:inline-flex;margin-bottom:14px;">VU<span>BR</span>ATION</a>
+        <p>AI-powered tools, automations, and systems for businesses across every industry. We build AI that works — not hype, not demos. Deployable today.</p>
+        <div class="footer-socials">
+          <a href="https://twitter.com/Vubration33" target="_blank" rel="noopener" class="social-link" title="Twitter/X" aria-label="Twitter">𝕏</a>
+          <a href="https://github.com/Vubration" target="_blank" rel="noopener" class="social-link" title="GitHub" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          </a>
+          <a href="https://vubration.gumroad.com" target="_blank" rel="noopener" class="social-link" title="Gumroad" aria-label="Gumroad">G</a>
+          <a href="mailto:dimitris33ai@icloud.com" class="social-link" title="Email" aria-label="Email">✉</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="pocket-agent.html">Pocket Agent AI</a></li>
+          <li><a href="prompt-packs.html">AI Prompt Packs</a></li>
+          <li><a href="distributor.html">Distributor System</a></li>
+          <li><a href="blueprint.html">Business Blueprint</a></li>
+          <li><a href="orthoops.html">OrthoOps AI</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mailto:dimitris33ai@icloud.com">Contact</a></li>
+          <li><a href="https://vubration.gumroad.com" target="_blank" rel="noopener">Shop on Gumroad</a></li>
+          <li><a href="https://twitter.com/Vubration33" target="_blank" rel="noopener">Twitter/X</a></li>
+          <li><a href="https://github.com/Vubration" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="blog.html">Free Guides</a></li>
+          <li><a href="https://vubration.gumroad.com" target="_blank" rel="noopener">All Downloads</a></li>
+          <li><a href="mailto:dimitris33ai@icloud.com">Support</a></li>
+          <li><a href="https://orthoopsai.com" target="_blank" rel="noopener">OrthoOps AI Site</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Vubration LLC · All rights reserved · Digital products delivered instantly</p>
+      <p>Built with AI. Powered by ambition. <a href="mailto:dimitris33ai@icloud.com">dimitris33ai@icloud.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
