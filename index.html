@@ -1,550 +1,1597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="mCfqp4pYuRgDHBJvhjfiG9vyYq47NzoCVZVMH7UlB7A" />
-
-  <title>Vubration — AI That Runs Your Business</title>
-  <meta name="description" content="Vubration builds AI-powered tools, automations, and systems for businesses across every industry. From $20/month Telegram AI assistants to enterprise operations platforms.">
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://vubration.com/">
-  <meta property="og:title"       content="Vubration — AI That Runs Your Business">
-  <meta property="og:description" content="AI-powered tools, automations, and systems for businesses across every industry. Deploy today. No dev team required.">
-  <meta property="og:image"       content="https://vubration.com/og-image.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:site"        content="@Vubration33">
-  <meta name="twitter:title"       content="Vubration — AI That Runs Your Business">
-  <meta name="twitter:description" content="AI-powered tools, automations, and systems for businesses across every industry.">
-
-  <!-- Favicon placeholder -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="https://vubration.com/">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrthoOps AI - The AI Operations System Built for Orthopedic Distributors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    /* Page-specific additions */
-    .hero .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-    @media (max-width: 640px) { .hero .container { padding: 0 20px; } }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Industry marquee separator */
-    .marquee-wrap { overflow: hidden; width: 100%; }
-
-    /* Hero terminal card */
-    .hero-visual {
-      position: absolute;
-      right: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 340px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      display: none;
-      z-index: 2;
-      box-shadow: var(--shadow-card), 0 0 60px rgba(0,180,216,0.08);
+    :root {
+      --bg:        #0a0f1e;
+      --bg2:       #0d1426;
+      --card:      #1a2035;
+      --card2:     #111827;
+      --border:    rgba(59,130,246,0.18);
+      --blue:      #3b82f6;
+      --blue-dark: #2563eb;
+      --gold:      #f59e0b;
+      --red:       #ef4444;
+      --white:     #ffffff;
+      --muted:     #94a3b8;
+      --text:      #e2e8f0;
     }
-    .hero-visual-bar {
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 16px;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(10,15,30,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
-    .vbar-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--white);
     }
-    .vbar-dot-r { background: #ff5f57; }
-    .vbar-dot-y { background: #febc2e; }
-    .vbar-dot-g { background: #28c840; }
-    .hero-terminal-line {
-      font-family: 'Courier New', monospace;
-      font-size: 12px;
-      color: var(--text-dim);
-      line-height: 2;
+    .nav-logo span { color: var(--blue); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-    .hero-terminal-line .t-accent { color: var(--accent); }
-    .hero-terminal-line .t-green  { color: var(--accent-green); }
-    .hero-terminal-line .t-white  { color: var(--text); }
-    .hero-terminal-line .t-dim    { color: var(--text-dim); opacity: 0.6; }
-    .cursor { animation: blink 1s step-end infinite; }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--blue-dark); }
 
-    @media (min-width: 1100px) {
-      .hero .container { max-width: none; padding: 0 80px; }
-      .hero-visual { display: block; }
-      .hero-content { max-width: 640px; }
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated gradient background */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(59,130,246,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(245,158,11,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 70%, rgba(59,130,246,0.06) 0%, transparent 60%);
+      animation: heroGlow 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      0%   { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    /* Grid overlay */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.3);
+      color: var(--blue);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-logo {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 900;
+      letter-spacing: -3px;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .hero-logo .ai { color: var(--blue); }
+
+    /* ─── API NOTE ─── */
+    .api-note {
+      margin-top: 1.5rem;
+      background: rgba(59,130,246,0.06);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .api-note-title {
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+    }
+    .api-estimate {
+      margin-top: 0.75rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .api-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+    .api-row strong { color: var(--gold); }
+
+    .mac-mini-wrap {
+      margin: 2rem auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      opacity: 0.85;
+    }
+    .mac-mini-svg {
+      width: min(320px, 80vw);
+      filter: drop-shadow(0 0 18px rgba(59,130,246,0.25));
+    }
+    .mac-mini-caption {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+      color: rgba(148,163,184,0.7);
+      margin-bottom: 3rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 30px rgba(59,130,246,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(59,130,246,0.5);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--white);
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      opacity: 0.6;
+      animation: bounce 2s ease-in-out infinite;
+      z-index: 1;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      padding: 7rem 2rem;
+      max-width: 1140px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    section.full-bleed {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    section.full-bleed .inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: block;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+
+    .section-headline {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 3.5rem auto;
+      text-align: center;
+    }
+
+    /* ─── PROBLEM ─── */
+    #problem { background: var(--bg2); max-width: 100%; }
+    #problem .inner { max-width: 1140px; margin: 0 auto; padding: 7rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 600px) {
+      .problem-grid { grid-template-columns: 1fr; }
+    }
+
+    .problem-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      transition: transform 0.2s, border-color 0.2s;
+      text-align: center;
+    }
+    .problem-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59,130,246,0.4);
+    }
+
+    .problem-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .problem-card p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .problem-card p strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ─── SOLUTION ─── */
+    .solution-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+      align-items: stretch;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1100px;
+      width: 100%;
+    }
+    @media (max-width: 900px) {
+      .solution-tabs { grid-template-columns: 1fr; }
+    }
+
+    .solution-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .solution-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59,130,246,0.5);
+      box-shadow: 0 0 40px rgba(59,130,246,0.08);
+    }
+
+    .solution-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .solution-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .solution-card .subtitle {
+      font-size: 0.8rem;
+      color: var(--blue);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .solution-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .solution-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .solution-card ul li::before {
+      content: '→';
+      color: var(--blue);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ─── PROOF ─── */
+    #proof { background: var(--bg2); max-width: 100%; }
+    #proof .inner { max-width: 1140px; margin: 0 auto; padding: 7rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 0 auto 4rem;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+    @media (max-width: 700px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 900;
+      color: var(--blue);
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-number.hero-stat {
+      font-size: clamp(3rem, 7vw, 5rem);
+      color: var(--red);
+      text-shadow: 0 0 40px rgba(239,68,68,0.5), 0 0 80px rgba(239,68,68,0.2);
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .proof-story {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-left: 4px solid var(--red);
+      border-radius: 12px;
+      padding: 2.5rem;
+      max-width: 760px;
+    }
+
+    .proof-story .story-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+
+    .proof-story p {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* ─── BRAIN ─── */
+    .brain-text {
+      max-width: 720px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin: 0 auto 4rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .brain-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .brain-node {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      min-width: 160px;
+    }
+
+    .brain-node .node-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .brain-node h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .brain-node p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .brain-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1rem;
+      color: var(--blue);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .brain-center {
+      background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(245,158,11,0.1));
+      border-color: rgba(59,130,246,0.4);
+      box-shadow: 0 0 40px rgba(59,130,246,0.12);
+    }
+
+    .brain-center h4 { color: var(--blue); font-size: 1rem; }
+
+    /* ─── PRICING ─── */
+    #pricing { background: var(--bg2); max-width: 100%; }
+    #pricing .inner { max-width: 1140px; margin: 0 auto; padding: 7rem 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+    .pricing-card {
+      background: var(--card);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 16px;
+      padding: 3.5rem;
+      max-width: 620px;
+      box-shadow: 0 0 60px rgba(59,130,246,0.1);
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .price-amount {
+      font-size: clamp(3.5rem, 8vw, 5rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -3px;
+      line-height: 1;
+    }
+
+    .price-amount span {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0;
+    }
+
+    .price-period {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 560px) {
+      .pricing-features { grid-template-columns: 1fr; }
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 1rem;
+      color: var(--muted);
+      text-align: left;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--blue);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .roi-callout {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-top: 2rem;
+      line-height: 1.6;
+    }
+
+    .roi-callout strong { color: #fbbf24; }
+
+    /* ─── HOW IT WORKS ─── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 3rem;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .timeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      position: relative;
+      text-align: left;
+    }
+
+    .timeline-step:not(:last-child) .step-line {
+      position: absolute;
+      left: 19px;
+      top: 48px;
+      width: 2px;
+      height: calc(100% - 8px);
+      background: linear-gradient(180deg, var(--blue), rgba(59,130,246,0.1));
+    }
+
+    .step-dot {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(59,130,246,0.12);
+      border: 2px solid rgba(59,130,246,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 800;
+      color: var(--blue);
+      z-index: 1;
+    }
+
+    .step-body {
+      padding-bottom: 3rem;
+      text-align: left;
+    }
+
+    .step-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .step-body p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--card2);
+      border-top: 1px solid var(--border);
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.75rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .footer-logo span { color: var(--blue); }
+
+    .footer-tagline {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-email {
+      display: inline-block;
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      transition: opacity 0.2s;
+    }
+    .footer-email:hover { opacity: 0.7; }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(148,163,184,0.4);
+      margin-top: 3rem;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      /* Nav */
+      nav { padding: 0.875rem 1.25rem; }
+      .nav-links { display: none; }
+
+      /* Hero */
+      .hero-logo { font-size: 2.5rem; letter-spacing: -1px; }
+      .hero-tagline { font-size: 1rem; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .hero-btns a, .hero-btns button { width: 100%; max-width: 320px; text-align: center; }
+      .mac-mini-img { width: 95vw !important; max-width: 95vw !important; }
+
+      /* Sections */
+      section { padding: 4rem 1rem; }
+      #problem .inner, #proof .inner, #pricing .inner { padding: 4rem 1rem; }
+      .section-headline { letter-spacing: -0.5px; }
+      .section-sub { font-size: 0.95rem; }
+
+      /* Stats grid — 1 column, remove span */
+      .stats-grid { grid-template-columns: 1fr !important; }
+      .stats-grid .stat-card { grid-column: span 1 !important; }
+
+      /* Solution tabs — 1 column (900px already covers this, but explicit) */
+      .solution-tabs { grid-template-columns: 1fr !important; }
+
+      /* Visual intelligence — 1 column */
+      .vision-grid { grid-template-columns: 1fr !important; }
+
+      /* Vision callout how-it-works grid — 1 column */
+      .vision-callout-grid { grid-template-columns: 1fr !important; }
+
+      /* Pricing packages — 1 column */
+      .pricing-packages-grid { grid-template-columns: 1fr !important; }
+
+      /* API tokens callout — stack vertically */
+      .api-tokens-callout { flex-direction: column !important; }
+      .api-tokens-callout > div:last-child { text-align: left !important; }
+
+      /* What's included container */
+      .oo-tabs-container { padding: 1.25rem 1rem !important; }
+
+      /* Brain flow */
+      .brain-flow { flex-direction: column; gap: 0.5rem; }
+      .brain-arrow { transform: rotate(90deg); }
+
+      /* Pricing card */
+      .pricing-card { padding: 2rem 1.25rem; }
+
+      /* Prevent horizontal overflow globally on mobile */
+      body { overflow-x: hidden; }
+      html { overflow-x: hidden; }
+      img { max-width: 100% !important; }
+    }
+
+    /* ─── ANIMATED PULSE ON STAT ─── */
+    @keyframes pulse-glow {
+      0%, 100% { text-shadow: 0 0 30px rgba(239,68,68,0.5), 0 0 60px rgba(239,68,68,0.2); }
+      50%       { text-shadow: 0 0 60px rgba(239,68,68,0.8), 0 0 100px rgba(239,68,68,0.4); }
+    }
+    .hero-stat { animation: pulse-glow 3s ease-in-out infinite; }
+
+    /* Subtle floating particles via pseudo-elements on hero */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float linear infinite;
+      z-index: 0;
+    }
+    @keyframes float {
+      0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 0.5; }
+      100% { transform: translateY(-80vh) translateX(30px) scale(0.5); opacity: 0; }
+    }
+    @media (max-width: 768px) {
+      .scroll-indicator { display: none !important; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════
-     NAVIGATION
-     ═══════════════════════════════════════════════════════ -->
-<nav class="nav" role="navigation" aria-label="Main navigation">
-  <a class="nav-logo" href="index.html">VU<span>BR</span>ATION</a>
-
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">OrthoOps<span> AI</span></div>
   <div class="nav-links">
-    <a href="#products">Products</a>
-    <a href="pocket-agent.html">Pocket Agent</a>
-    <a href="prompt-packs.html">Prompt Packs</a>
-    <a href="blog.html">Blog</a>
-    <a href="mailto:dimitris33ai@icloud.com">Contact</a>
-    <a href="#products" class="nav-cta">Get Started →</a>
+    <a href="#problem">The Problem</a>
+    <a href="#solution">Solution</a>
+    <a href="#proof">Results</a>
+    <a href="#vision">Visual Intelligence</a>
+    <a href="#pricing">Pricing</a>
   </div>
-
-  <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="#demo" class="nav-cta" style="background:var(--gold); color:#0a0f1e;">Book a Demo</a>
 </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
-  <a href="#products">Products</a>
-  <a href="pocket-agent.html">Pocket Agent AI</a>
-  <a href="prompt-packs.html">AI Prompt Packs</a>
-  <a href="distributor.html">Distributor System</a>
-  <a href="blueprint.html">Business Blueprint</a>
-  <a href="orthoops.html">OrthoOps AI</a>
-  <a href="blog.html">Blog</a>
-  <a href="mailto:dimitris33ai@icloud.com">Contact</a>
-  <a href="#products" class="mobile-cta">Get Started →</a>
-</div>
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <!-- Floating particles (pure CSS, injected via JS below for randomness) -->
+  <div id="particles"></div>
 
-<!-- ═══════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════ -->
-<section class="hero" aria-label="Hero">
-  <div class="hero-bg"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Now in Pilot Deployment</div>
+    <h1 class="hero-logo">OrthoOps<span class="ai"> AI</span></h1>
+    <p class="hero-tagline">The AI Operations System Built for Orthopedic Distributors</p>
+    <p class="hero-sub">Pricing intelligence. Document automation. Knowledge that grows. 24/7.</p>
+    <div class="hero-btns">
+      <a href="mailto:dimitris33ai@icloud.com" class="btn-primary">Book a Demo</a>
+      <a href="#solution" class="btn-secondary">See How It Works ↓</a>
+    </div>
 
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge">AI Automation Company — Deployable Today</div>
-
-      <h1>AI That Runs Your Business<br><span class="gradient-text">While You Sleep.</span></h1>
-
-      <p class="hero-sub">
-        We build AI-powered tools, systems, and automations for businesses across every industry.
-        Not demos. Not experiments. <strong>Stuff that actually works.</strong>
-      </p>
-
-      <div class="hero-actions">
-        <a href="#products" class="btn-primary btn-lg">Explore Our Products</a>
-        <a href="pocket-agent.html" class="btn-ghost btn-lg">Pocket Agent — $20/mo →</a>
+    <!-- Mac mini photo -->
+    <div class="mac-mini-wrap">
+      <div style="position:relative; display:inline-block;">
+        <img 
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAQDAwMDAwQDAwQGBAMEBgcFBAQFBwgHBwcHBwgLCAkJCQkICwsMDAwMDAsNDQ4ODQ0SEhISEhQUFBQUFBQUFBQBBQUFCAgIEAsLEBQODg4UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/CABEIAnYEsAMBEQACEQEDEQH/xAA1AAEAAQUBAQEAAAAAAAAAAAAABAECAwUGBwgJAQEBAQEBAQEAAAAAAAAAAAAAAQIDBAUG/9oADAMBAAIQAxAAAAD7+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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"
+          alt="Mac mini — the hardware behind OrthoOps AI"
+          class="mac-mini-img"
+          style="width: min(480px, 80vw); border-radius: 20px; display:block; filter: drop-shadow(0 0 60px rgba(59,130,246,0.35)); background: #fff;"
+          onerror="this.onerror=null; this.style.display='none'; document.getElementById('mac-fallback').style.display='flex';"
+        />
+        </div>
+      <!-- Fallback if image fails to load -->
+      <div id="mac-fallback" style="display:none; flex-direction:column; align-items:center; gap:0.5rem; color:var(--muted); font-size:0.85rem;">
+        <div style="font-size:4rem;">🖥️</div>
+        <span>Mac mini — always on, always ready</span>
       </div>
-
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">300<span class="text-accent">+</span></div>
-          <div class="hero-stat-label">Industries Served</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div>
-          <div class="hero-stat-num">6</div>
-          <div class="hero-stat-label">Product Lines</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div>
-          <div class="hero-stat-num">$20</div>
-          <div class="hero-stat-label">Starting Price</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div>
-          <div class="hero-stat-num">0</div>
-          <div class="hero-stat-label">Dev Team Required</div>
-        </div>
-      </div>
+      <p class="mac-mini-caption" style="font-size:0.95rem; margin-top:0.75rem;">Runs on a Mac mini. Sits on a desk. Ships pre-configured. Plug in and go.</p>
     </div>
   </div>
 
-  <!-- Decorative terminal card (desktop only) -->
-  <div class="hero-visual" aria-hidden="true">
-    <div class="hero-visual-bar">
-      <div class="vbar-dot vbar-dot-r"></div>
-      <div class="vbar-dot vbar-dot-y"></div>
-      <div class="vbar-dot vbar-dot-g"></div>
-      <span style="margin-left:8px;font-size:11px;color:var(--text-dim);font-family:monospace;">pocket-agent · live</span>
-    </div>
-    <div class="hero-terminal-line"><span class="t-dim">09:14</span> <span class="t-green">✓</span> <span class="t-white">Morning briefing ready</span></div>
-    <div class="hero-terminal-line"><span class="t-dim">09:14</span> <span class="t-accent">→</span> You have 3 proposals pending</div>
-    <div class="hero-terminal-line"><span class="t-dim">09:14</span> <span class="t-accent">→</span> Follow up: Mike (3 days cold)</div>
-    <div class="hero-terminal-line"><span class="t-dim">09:15</span> <span class="t-green">✓</span> <span class="t-white">Invoice #4471 sent to client</span></div>
-    <div class="hero-terminal-line"><span class="t-dim">09:16</span> <span class="t-accent">→</span> Google Review reply drafted</div>
-    <div class="hero-terminal-line"><span class="t-dim">09:18</span> <span class="t-green">✓</span> <span class="t-white">Social post scheduled (IG + FB)</span></div>
-    <div class="hero-terminal-line"><span class="t-dim">09:19</span> <span class="t-white">What else? <span class="cursor">█</span></span></div>
-    <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
-      <div style="font-size:11px;color:var(--text-dim);font-family:var(--font-display);text-transform:uppercase;letter-spacing:1px;">Pocket Agent AI</div>
-      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Running 24/7 · Telegram · $20/mo</div>
-    </div>
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <span>▼</span>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     MARQUEE — Industries
-     ═══════════════════════════════════════════════════════ -->
-<div class="marquee-section" aria-hidden="true">
-  <div class="marquee-label">Trusted across 300+ industries</div>
-  <div class="marquee-wrap">
-    <div class="marquee-track">
-      <!-- First set -->
-      <div class="marquee-item">🏠 Real Estate <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🔧 HVAC & Contractors <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🦷 Dental Offices <div class="marquee-dot"></div></div>
-      <div class="marquee-item">⚖️ Law Firms <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🏥 Medical Practices <div class="marquee-dot"></div></div>
-      <div class="marquee-item">💪 Gyms & Fitness <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🛡️ Insurance Agents <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🍕 Restaurants <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🚗 Auto Dealers <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🏗️ Construction <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🛍️ Retail & E-commerce <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🏢 Property Managers <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🔬 Orthopedic Distributors <div class="marquee-dot"></div></div>
-      <div class="marquee-item">💈 Salons & Spas <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🌿 Landscaping <div class="marquee-dot"></div></div>
-      <!-- Duplicate for seamless loop -->
-      <div class="marquee-item">🏠 Real Estate <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🔧 HVAC & Contractors <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🦷 Dental Offices <div class="marquee-dot"></div></div>
-      <div class="marquee-item">⚖️ Law Firms <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🏥 Medical Practices <div class="marquee-dot"></div></div>
-      <div class="marquee-item">💪 Gyms & Fitness <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🛡️ Insurance Agents <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🍕 Restaurants <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🚗 Auto Dealers <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🏗️ Construction <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🛍️ Retail & E-commerce <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🏢 Property Managers <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🔬 Orthopedic Distributors <div class="marquee-dot"></div></div>
-      <div class="marquee-item">💈 Salons & Spas <div class="marquee-dot"></div></div>
-      <div class="marquee-item">🌿 Landscaping <div class="marquee-dot"></div></div>
+<div class="section-divider"></div>
+
+<!-- ─── PROBLEM ─── -->
+<div id="problem">
+  <div class="inner">
+    <div class="section-label">The Reality</div>
+    <h2 class="section-headline">Your operation is running on text messages,<br>spreadsheets, and memory.</h2>
+    <p class="section-sub" style="text-align:center; margin-left:auto; margin-right:auto;">Every orthopedic distributor faces the same operational drag. It costs you time, money, and cases you don't even know you're losing.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">📞</div>
+        <p><strong>Mid-Case Pricing Chaos</strong>Reps calling for pricing mid-case. Inconsistent. Slow. Distracting - for everyone in the OR.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📄</div>
+        <p><strong>Document Black Holes</strong>D-tickets and POs filed manually - or lost entirely. Disputes happen weeks later with no paper trail.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💸</div>
+        <p><strong>Billing Errors You Don't See</strong>Pricing errors from billing systems caught days later, if at all. Every uncaught overcharge is money left on the table.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📊</div>
+        <p><strong>Clawbacks as Surprises</strong>PO aging tracked in spreadsheets. 270-day windows managed manually. Clawbacks come as surprises - never as warnings.</p>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     INTRO
-     ═══════════════════════════════════════════════════════ -->
-<section class="intro-section">
-  <div class="container">
-    <div class="intro-grid">
-      <div class="intro-left reveal">
-        <span class="tag">About Vubration</span>
-        <h2>We build AI that works.<br>Not hype. <span class="gradient-text">Results.</span></h2>
-        <p>
-          Vubration is an AI automation company. We build practical tools for business owners
-          who are done hearing about AI and ready to actually use it. From $7 prompt packs
-          to $5K enterprise systems — we build AI for the real world.
-        </p>
-        <a href="#products" class="btn-ghost">See what we build →</a>
-      </div>
-      <div class="intro-features reveal" style="transition-delay:0.15s">
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h4>Deploy Today</h4>
-          <p>Download and use immediately. No dev team, no setup calls, no 6-month onboarding.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🏭</div>
-          <h4>Built for Real Business</h4>
-          <p>Every tool solves a real problem. Proposals, follow-ups, ops, communications.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📈</div>
-          <h4>Scales With You</h4>
-          <p>Start with prompts at $7. Scale to a full AI-run operation. We have every rung.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h4>Your Business. Your AI.</h4>
-          <p>Your data stays yours. Your AI learns your business, not ours.</p>
-        </div>
-      </div>
+<div class="section-divider"></div>
+
+<!-- ─── SOLUTION ─── -->
+<section id="solution">
+  <div class="section-label">The Platform</div>
+  <h2 class="section-headline">One platform. Three AI-powered operations layers.</h2>
+  <p class="section-sub" style="text-align:center; margin-left:auto; margin-right:auto;">OrthoOps AI replaces the patchwork of texts, spreadsheets, and manual processes with a single intelligent system - available to every rep, every admin, every warehouse worker, 24/7.</p>
+
+  <div class="solution-tabs">
+
+    <div class="solution-card">
+      <div class="solution-card-icon">🎯</div>
+      <h3>Field Force</h3>
+      <div class="subtitle">Your Reps, Equipped</div>
+      <ul>
+        <li>Instant pricing on any hospital contract, any part number</li>
+        <li>Automatic billing error detection</li>
+        <li>D-ticket and PO filing - private, instant, searchable</li>
+        <li>Clinical knowledge on demand: surgical techniques, product specs, competitive intel</li>
+        <li>Available 24/7. Never calls in sick.</li>
+      </ul>
     </div>
+
+    <div class="solution-card">
+      <div class="solution-card-icon">🏢</div>
+      <h3>Office Intelligence</h3>
+      <div class="subtitle">Your Admin, Automated</div>
+      <ul>
+        <li>Five corporate reports → one master cross-referenced file</li>
+        <li>Every case tracked: status, aging, disputes flagged automatically</li>
+        <li>270-day clawback prevention with automated rep alerts</li>
+        <li>Dispute pattern detection - penny variances, construct mismatches caught before they become problems</li>
+      </ul>
+    </div>
+
+    <div class="solution-card">
+      <div class="solution-card-icon">📦</div>
+      <h3>Warehouse Ops</h3>
+      <div class="subtitle">Your Dock, Smart</div>
+      <ul>
+        <li>Instrument identification by part number - instant tray assignment</li>
+        <li>1,000+ instruments indexed, sub-second lookup</li>
+        <li>Tray audit support and photo archiving</li>
+        <li>No more guessing where an instrument belongs</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     PRODUCTS
-     ═══════════════════════════════════════════════════════ -->
-<section id="products" class="products-section" aria-label="Products">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag">Product Lines</span>
-      <h2>Six Ways to Automate<br>Your Business</h2>
-      <p>Pick your entry point. Every product works out of the box.</p>
-    </div>
+<div class="section-divider"></div>
 
-    <div class="products-grid">
+<!-- ─── PROOF ─── -->
+<div id="proof">
+  <div class="inner">
+    <div class="section-label">Proof</div>
+    <h2 class="section-headline">Real results. Real distributor. Right now.</h2>
+    <p class="section-sub" style="text-align:center; margin-left:auto; margin-right:auto;">OrthoOps AI is live at an orthopedic surgical distributor in Florida. These numbers are from the first weeks of deployment - not projections.</p>
 
-      <!-- 1. Pocket Agent AI -->
-      <div class="product-card featured reveal">
-        <div class="product-badge badge-blue">Most Popular</div>
-        <div class="product-icon-wrap icon-blue">🤖</div>
-        <h3>Pocket Agent AI</h3>
-        <p class="desc">
-          An AI assistant that lives in your Telegram. Answers questions, sends follow-ups, drafts emails,
-          builds SOPs, and runs your business brain 24/7. One AI. 300 industries. Your business, automated.
-        </p>
-        <div class="product-footer">
-          <div>
-            <div class="product-price">$20<span class="product-price-note">/month</span></div>
-          </div>
-        </div>
-        <a href="pocket-agent.html" class="card-cta">Get Pocket Agent →</a>
+    <div class="stats-grid" style="margin:0 auto;">
+      <div class="stat-card" style="border-color: rgba(239,68,68,0.3); grid-column: span 3;">
+        <div class="stat-number hero-stat">$400.05</div>
+        <div class="stat-label">Caught in a single billing system case. In seconds.</div>
       </div>
-
-      <!-- 2. AI Prompt Packs -->
-      <div class="product-card reveal" style="transition-delay:0.1s">
-        <div class="product-badge badge-green">Digital Downloads</div>
-        <div class="product-icon-wrap icon-green">📦</div>
-        <h3>AI Prompt Packs</h3>
-        <p class="desc">
-          Pre-built prompt toolkits for specific industries. Real estate, contractors, dentists, lawyers,
-          gyms, restaurants, insurance — copy, paste, get results in seconds. No AI expertise required.
-        </p>
-        <div class="product-footer">
-          <div>
-            <div class="product-price">$7–$47</div>
-            <div class="product-price-note">one-time download</div>
-          </div>
-        </div>
-        <a href="prompt-packs.html" class="card-cta">Browse Prompt Packs →</a>
+      <div class="stat-card">
+        <div class="stat-number">4,875+</div>
+        <div class="stat-label">Part numbers indexed and searchable instantly</div>
       </div>
-
-      <!-- 3. OpenClaw Distributor System -->
-      <div class="product-card reveal" style="transition-delay:0.2s">
-        <div class="product-badge badge-orange">For Distributors</div>
-        <div class="product-icon-wrap icon-orange">🏗️</div>
-        <h3>OpenClaw Distributor System</h3>
-        <p class="desc">
-          Complete AI operations system for distributors. 4 AI Chiefs — CIO, COO, CFO, CTO. Pricing lookup,
-          PO tracking, morning briefings, field force comms. Everything a distributor needs, automated.
-        </p>
-        <div class="product-footer">
-          <div>
-            <div class="product-price">$299</div>
-            <div class="product-price-note">one-time setup</div>
-          </div>
-        </div>
-        <a href="distributor.html" class="card-cta">See Distributor System →</a>
+      <div class="stat-card">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Surgical documents in the knowledge vault</div>
       </div>
-
-      <!-- 4. OpenClaw Business Blueprint -->
-      <div class="product-card featured-green reveal" style="transition-delay:0.1s">
-        <div class="product-badge badge-gold">Build Your Own</div>
-        <div class="product-icon-wrap icon-teal">🧠</div>
-        <h3>OpenClaw Business Blueprint</h3>
-        <p class="desc">
-          The autonomous AI business operating system. 5 C-suite execs, 13 division heads, 28 worker
-          archetypes. Build your own AI-run business from the ground up. Modular, powerful, yours.
-        </p>
-        <div class="product-footer">
-          <div>
-            <div class="product-price">$29–$199</div>
-            <div class="product-price-note">3 tiers available</div>
-          </div>
-        </div>
-        <a href="blueprint.html" class="card-cta">Explore the Blueprint →</a>
+      <div class="stat-card">
+        <div class="stat-number" style="color: var(--gold);">270 days → 0</div>
+        <div class="stat-label">Now zero surprises - clawbacks tracked automatically</div>
       </div>
-
-      <!-- 5. OrthoOps AI -->
-      <div class="product-card enterprise reveal" style="transition-delay:0.2s">
-        <div class="product-badge badge-purple">Enterprise</div>
-        <div class="product-icon-wrap icon-purple">🔬</div>
-        <h3>OrthoOps AI</h3>
-        <p class="desc">
-          Enterprise-grade AI operations platform built specifically for orthopedic surgical distributors.
-          Asset tracking, rep management, pricing intelligence, tray logistics — fully automated.
-        </p>
-        <div class="product-footer">
-          <div>
-            <div class="product-price">$4,999<span class="product-price-note">+</span></div>
-            <div class="product-price-note">one-time + $499/mo</div>
-          </div>
-        </div>
-        <a href="orthoops.html" class="card-cta">Visit OrthoOps AI →</a>
+      <div class="stat-card">
+        <div class="stat-number">&lt;1 sec</div>
+        <div class="stat-label">Average pricing lookup response time</div>
       </div>
-
-      <!-- 6. Blog -->
-      <div class="product-card reveal" style="transition-delay:0.3s">
-        <div class="product-badge badge-green">Free Resources</div>
-        <div class="product-icon-wrap icon-green">📝</div>
-        <h3>Blog & Free Guides</h3>
-        <p class="desc">
-          Real-world AI guides, tutorials, and playbooks — written for business owners, not tech people.
-          How to use AI today, what actually works, and what's worth your money.
-        </p>
-        <div class="product-footer">
-          <div>
-            <div class="product-price">Free</div>
-            <div class="product-price-note">always</div>
-          </div>
-        </div>
-        <a href="blog.html" class="card-cta">Read the Blog →</a>
+      <div class="stat-card">
+        <div class="stat-number" style="color:var(--gold);">24/7</div>
+        <div class="stat-label">Available to every rep, every shift</div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     NUMBERS
-     ═══════════════════════════════════════════════════════ -->
-<section class="numbers-section" aria-label="Stats">
-  <div class="container">
-    <div class="numbers-grid reveal">
-      <div class="number-item">
-        <div class="number-val">300<span class="accent">+</span></div>
-        <div class="number-label">Industries we automate for</div>
-      </div>
-      <div class="number-item">
-        <div class="number-val">500<span class="accent">+</span></div>
-        <div class="number-label">AI prompts available</div>
-      </div>
-      <div class="number-item">
-        <div class="number-val">6</div>
-        <div class="number-label">Products from $20 to $5K</div>
-      </div>
-      <div class="number-item">
-        <div class="number-val">24<span class="accent">/7</span></div>
-        <div class="number-label">Your AI never clocks out</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     SOCIAL PROOF
-     ═══════════════════════════════════════════════════════ -->
-<section class="proof-section" aria-label="Testimonials">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag">Social Proof</span>
-      <h2>What Business Owners Say</h2>
-      <p>Real results from real businesses. No fluff.</p>
-    </div>
-
-    <div class="proof-grid">
-      <div class="proof-card reveal">
-        <div class="proof-stars">★★★★★</div>
-        <p class="proof-quote">I used to spend 45 minutes writing a listing description. Now I paste the prompt, tweak two sentences, and I'm done in 3 minutes. Worth every penny.</p>
-        <div class="proof-author">Sarah M.</div>
-        <div class="proof-role">Real Estate Agent, Florida</div>
-      </div>
-      <div class="proof-card reveal" style="transition-delay:0.1s">
-        <div class="proof-stars">★★★★★</div>
-        <p class="proof-quote">The negative review response prompts alone saved my sanity. Professional, calm, exactly what I needed without spending an hour thinking about it.</p>
-        <div class="proof-author">Marcus T.</div>
-        <div class="proof-role">Restaurant Owner</div>
-      </div>
-      <div class="proof-card reveal" style="transition-delay:0.2s">
-        <div class="proof-stars">★★★★★</div>
-        <p class="proof-quote">Bought the contractor pack for follow-up sequences. Closed two jobs in the first week that I would have lost before. That's a 50x return in week one.</p>
-        <div class="proof-author">Derek R.</div>
-        <div class="proof-role">HVAC Business Owner</div>
+      <div class="stat-card">
+        <div class="stat-number" style="color:var(--blue);">0</div>
+        <div class="stat-label">Calls to ops for pricing mid-case</div>
       </div>
     </div>
 
-    <div class="proof-placeholder reveal mt-32" style="transition-delay:0.3s">
-      <div class="placeholder-icon">💬</div>
-      <p>More testimonials coming soon. Running on Vubration? <a href="mailto:dimitris33ai@icloud.com" style="color:var(--accent)">Tell us your story →</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     CTA SECTION
-     ═══════════════════════════════════════════════════════ -->
-<section class="cta-section" aria-label="Call to action">
-  <div class="container">
-    <div class="cta-box reveal">
-      <span class="tag">Ready to Start?</span>
-      <h2>Your business runs on people. <span class="gradient-text">Ours also runs on AI.</span></h2>
+    <div class="proof-story" style="margin:2.5rem auto 0;">
+      <div class="story-label">📍 From Our Pilot Distributor - Florida, 2026</div>
       <p>
-        Start with a $7 prompt pack and use it today. Or launch with a full AI system and never
-        look back. Either way — it starts now.
+        A senior rep at our pilot distributorship forwarded four billing system emails on a Tuesday morning. The system flagged a <strong style="color: #ef4444;">$400.05 overcharge</strong> on a single revision case - five line items billed at the wrong list price. Manually, this would have surfaced four days later during reconciliation - if it was caught at all. <strong>OrthoOps AI caught it in seconds, automatically, before the rep even knew to look.</strong>
       </p>
-      <div class="cta-actions">
-        <a href="#products" class="btn-primary btn-lg">Explore All Products</a>
-        <a href="pocket-agent.html" class="btn-ghost btn-lg">Get Pocket Agent — $20/mo</a>
-      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ─── VISUAL INTELLIGENCE ─── -->
+<section id="vision">
+  <div class="section-label">Visual Intelligence</div>
+  <h2 class="section-headline">Point a camera. The AI does the rest.</h2>
+  <p class="section-sub">OrthoOps AI reads surgical trays, implant bins, X-rays, and inventory photos with the same intelligence as a 14-year veteran in the field.</p>
+
+  <div class="vision-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1.5rem; max-width:1000px; margin:0 auto; width:100%;">
+
+    <div style="background:#1a2035; border:1px solid rgba(59,130,246,0.2); border-radius:14px; padding:2rem; text-align:left;">
+      <div style="font-size:2.5rem; margin-bottom:1rem; text-align:center;">🦴</div>
+      <h3 style="color:#fff; font-size:1.05rem; font-weight:700; margin-bottom:0.75rem; text-align:center;">X-Ray & Fluoroscopy</h3>
+      <p style="color:#94a3b8; font-size:0.92rem; line-height:1.6;">Photograph any X-ray or live C-arm image. The system identifies the implant manufacturer, model, and orientation — instantly. Reps use this in the OR, in hallway conversations with surgeons, or when evaluating revision cases.</p>
+      <p style="color:#64748b; font-size:0.78rem; line-height:1.5; margin-top:0.75rem; font-style:italic;">⚠️ Image quality and angle affect accuracy. Best results with clear AP or lateral views. Works as a strong starting point — always verify with clinical judgment.</p>
+    </div>
+
+    <div style="background:#1a2035; border:1px solid rgba(245,158,11,0.25); border-radius:14px; padding:2rem; text-align:left;">
+      <div style="font-size:2.5rem; margin-bottom:1rem; text-align:center;">📦</div>
+      <h3 style="color:#fff; font-size:1.05rem; font-weight:700; margin-bottom:0.75rem; text-align:center;">Bin & Tray Verification</h3>
+      <p style="color:#94a3b8; font-size:0.92rem; line-height:1.6;">Every bin has a defined contents list. The warehouse team photographs a bin before it ships or after it returns — the AI cross-references every part number, confirms the bin is complete, and logs the result automatically. No manual counting. No guessing.</p>
+    </div>
+
+    <div style="background:#1a2035; border:1px solid rgba(34,197,94,0.2); border-radius:14px; padding:2rem; text-align:left;">
+      <div style="font-size:2.5rem; margin-bottom:1rem; text-align:center;">📋</div>
+      <h3 style="color:#fff; font-size:1.05rem; font-weight:700; margin-bottom:0.75rem; text-align:center;">Inventory Movement Tracking</h3>
+      <p style="color:#94a3b8; font-size:0.92rem; line-height:1.6;">Photograph a stack of trays being moved to a facility. The AI reads every label, logs every asset number, and updates your master inventory tracker — which rep has what, where it is, and when it moved. No spreadsheet entry. Just a photo.</p>
+    </div>
+
+  </div>
+
+  <!-- How it works callout -->
+  <div style="max-width:760px; margin:2.5rem auto 0; background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2); border-radius:14px; padding:1.75rem 2rem; text-align:left;">
+    <div style="color:#fff; font-weight:700; font-size:1rem; margin-bottom:1rem; text-align:center;">How It Works in Practice</div>
+    <div class="vision-callout-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem 2rem; font-size:0.9rem; color:#cbd5e1;">
+      <div style="display:flex;gap:0.5rem;"><span style="color:#f59e0b;margin-top:2px;">→</span><span><strong style="color:#fff;">Warehouse ships a bin</strong> — tech photographs it, AI confirms all parts are present and logs the shipment</span></div>
+      <div style="display:flex;gap:0.5rem;"><span style="color:#f59e0b;margin-top:2px;">→</span><span><strong style="color:#fff;">Rep receives inventory</strong> — photographs trays on arrival, AI reads every label and updates location tracking</span></div>
+      <div style="display:flex;gap:0.5rem;"><span style="color:#f59e0b;margin-top:2px;">→</span><span><strong style="color:#fff;">Post-case restocking</strong> — warehouse photographs returned bins, AI checks against what was sent and flags anything missing</span></div>
+      <div style="display:flex;gap:0.5rem;"><span style="color:#f59e0b;margin-top:2px;">→</span><span><strong style="color:#fff;">Annual audit</strong> — reps photograph every tray at their accounts, AI builds the complete audit record automatically</span></div>
+    </div>
+  </div>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── INSTITUTIONAL BRAIN ─── -->
+<section id="brain">
+  <div class="section-label">Institutional Intelligence</div>
+  <h2 class="section-headline">Your system gets smarter every day. Automatically.</h2>
+
+  <div class="brain-text" style="text-align:center; max-width:760px; margin:0 auto 2.5rem;">
+    <p style="margin-bottom: 1.25rem;">Most software stays the same. OrthoOps AI learns from every interaction - and shares that intelligence across your entire team.</p>
+    <p style="margin-bottom: 1.25rem;">When a senior rep teaches the system a new construct breakdown, a pricing nuance, or how to identify a competitor implant from an X-ray - that knowledge gets saved permanently. Every rep on your team benefits. Not just the rep who shared it.</p>
+    <p>After three months, your AI operations system knows more about your pricing, your hospitals, and your products than any single person on your team. <strong style="color: var(--white);">And it never forgets.</strong></p>
+  </div>
+
+  <div class="brain-flow" style="justify-content:center;">
+    <div class="brain-node">
+      <div class="node-icon">👤</div>
+      <h4>Rep Interaction</h4>
+      <p>Questions, pricing,<br>documents, insights</p>
+    </div>
+    <div class="brain-arrow">→</div>
+    <div class="brain-node brain-center">
+      <div class="node-icon">🧠</div>
+      <h4>Institutional Brain</h4>
+      <p>Learns, indexes,<br>cross-references</p>
+    </div>
+    <div class="brain-arrow">→</div>
+    <div class="brain-node">
+      <div class="node-icon">👥</div>
+      <h4>All Reps</h4>
+      <p>Everyone benefits.<br>Instantly.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════ -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="nav-logo" href="index.html" style="display:inline-flex;margin-bottom:14px;">VU<span>BR</span>ATION</a>
-        <p>AI-powered tools, automations, and systems for businesses across every industry. We build AI that works — not hype, not demos. Deployable today.</p>
-        <div class="footer-socials">
-          <a href="https://twitter.com/Vubration33" target="_blank" rel="noopener" class="social-link" title="Twitter/X" aria-label="Twitter">𝕏</a>
-          <a href="https://github.com/Vubration" target="_blank" rel="noopener" class="social-link" title="GitHub" aria-label="GitHub">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-          </a>
-          <a href="https://vubration.gumroad.com" target="_blank" rel="noopener" class="social-link" title="Gumroad" aria-label="Gumroad">G</a>
-          <a href="mailto:dimitris33ai@icloud.com" class="social-link" title="Email" aria-label="Email">✉</a>
+<div class="section-divider"></div>
+
+<!-- ─── TESTIMONIAL ─── -->
+<section id="testimonial">
+  <div class="section-label">From the Field</div>
+  <h2 class="section-headline">Built by operators. Tested by the people who need it most.</h2>
+
+  <div style="max-width:800px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; width:100%;">
+
+    <div style="background:#1a2035; border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:2rem; text-align:left;">
+      <div style="color:#f59e0b; font-size:1.25rem; margin-bottom:1rem;">❝</div>
+      <p style="color:#e2e8f0; font-size:0.97rem; line-height:1.7; margin-bottom:1.25rem;">"I've been in orthopedics for over a decade. This thing answers questions I'd have to call three people to find out — and it's right. Pricing in seconds, revision math I'd normally calculate myself, competitor implants identified from X-rays. It's like having a senior rep in your pocket 24/7."</p>
+      <div style="color:#64748b; font-size:0.8rem;">— Senior Sales Rep, Pilot Distributor &middot; Florida</div>
+    </div>
+
+    <div style="background:#1a2035; border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:2rem; text-align:left;">
+      <div style="color:#f59e0b; font-size:1.25rem; margin-bottom:1rem;">❝</div>
+      <p style="color:#e2e8f0; font-size:0.97rem; line-height:1.7; margin-bottom:1.25rem;">"The first week it caught a billing error on a case worth over four hundred dollars. That was the moment I stopped asking whether this was worth it. The system pays for itself and then some — before the end of the first month."</p>
+      <div style="color:#64748b; font-size:0.8rem;">— Operations Manager, Pilot Distributor &middot; Florida</div>
+    </div>
+
+  </div>
+
+  <!-- Mobile responsive -->
+  <style>
+    @media (max-width: 768px) {
+      #testimonial > div { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── PRICING ─── -->
+<div id="pricing">
+  <div class="inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-headline">Simple pricing. Serious ROI.</h2>
+    <p class="section-sub" style="text-align:center; margin-left:auto; margin-right:auto;">One-time deployment package. Optional monthly support after you're live.</p>
+
+    <!-- Step 1: One-time packages -->
+    <div class="pricing-packages-grid" style="width:100%; max-width:720px; display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin:0 auto 1.5rem;">
+      <div style="background:rgba(15,23,42,0.8); border:2px solid rgba(245,158,11,0.5); border-radius:16px; padding:1.75rem; text-align:left;">
+        <div style="color:var(--gold); font-size:0.7rem; font-weight:700; letter-spacing:0.1em; margin-bottom:0.5rem;">STARTER &mdash; M4</div>
+        <div style="font-size:2.8rem; font-weight:900; color:var(--white); line-height:1;">$4,999</div>
+        <div style="color:var(--muted); font-size:0.8rem; margin-bottom:1.25rem;">one-time &middot; everything included</div>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.5rem; font-size:0.83rem; color:var(--text);">
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--gold);">&#10003;</span>Mac mini M4</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--gold);">&#10003;</span>Full system configuration</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--gold);">&#10003;</span>Google Drive built for your team</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--gold);">&#10003;</span>Pricing files &amp; rep roster loaded</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--gold);">&#10003;</span>Telegram groups created &amp; live</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--gold);">&#10003;</span>4&ndash;6 hrs hands-on training</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--gold);">&#10003;</span>Self-sufficient on day one</li>
+        </ul>
+      </div>
+      <div style="background:rgba(15,23,42,0.8); border:1px solid rgba(59,130,246,0.35); border-radius:16px; padding:1.75rem; text-align:left;">
+        <div style="color:var(--blue); font-size:0.7rem; font-weight:700; letter-spacing:0.1em; margin-bottom:0.5rem;">PERFORMANCE &mdash; M5 &middot; COMING SOON</div>
+        <div style="font-size:2.8rem; font-weight:900; color:var(--white); line-height:1;">$5,499</div>
+        <div style="color:var(--muted); font-size:0.8rem; margin-bottom:1.25rem;">one-time &middot; everything included</div>
+        <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.5rem; font-size:0.83rem; color:var(--text);">
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--blue);">&#10003;</span>Mac mini M5 (on release)</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--blue);">&#10003;</span>Everything in Starter package</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--blue);">&#10003;</span>Greater processing headroom</li>
+          <li style="display:flex;gap:0.5rem;"><span style="color:var(--blue);">&#10003;</span>Future-proofed for scale</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- What every package includes -->
+    <style>
+      .oo-tabs { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin:1.75rem 0 0; }
+      .oo-tab {
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        padding: 0.55rem 1.1rem;
+        white-space: nowrap;
+      }
+      .oo-tabs button:nth-child(1) { background:#1e3a5f; border:2px solid #3b82f6; color:#93c5fd; }
+      .oo-tabs button:nth-child(2) { background:#2e1b4e; border:2px solid #a855f7; color:#d8b4fe; }
+      .oo-tabs button:nth-child(3) { background:#3d2a00; border:2px solid #f59e0b; color:#fcd34d; }
+      .oo-tabs button:nth-child(4) { background:#0f2d1a; border:2px solid #22c55e; color:#86efac; }
+      .oo-tabs button:nth-child(5) { background:#3b0f0f; border:2px solid #ef4444; color:#fca5a5; }
+      .oo-tabs button:nth-child(1).active { background:#2563eb; color:#fff; border-color:#3b82f6; }
+      .oo-tabs button:nth-child(2).active { background:#7c3aed; color:#fff; border-color:#a855f7; }
+      .oo-tabs button:nth-child(3).active { background:#d97706; color:#fff; border-color:#f59e0b; }
+      .oo-tabs button:nth-child(4).active { background:#16a34a; color:#fff; border-color:#22c55e; }
+      .oo-tabs button:nth-child(5).active { background:#dc2626; color:#fff; border-color:#ef4444; }
+      .oo-content { display:none; animation: ooFadeIn 0.25s ease; }
+      .oo-content.active { display:block; }
+      @keyframes ooFadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+      .oo-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.65rem 1.5rem; text-align:left; margin-top:1.25rem; overflow:hidden; }
+      .oo-item { display:flex; gap:0.6rem; align-items:flex-start; font-size:0.9rem; color:#cbd5e1; line-height:1.5; word-break:break-word; }
+      .oo-check { color:#f59e0b; font-size:1rem; flex-shrink:0; margin-top:0.05rem; }
+      .oo-section-label { font-size:0.72rem; font-weight:700; letter-spacing:0.12em; color:#3b82f6; margin-bottom:0.35rem; }
+      .oo-section-headline { font-size:1.1rem; font-weight:700; color:#ffffff; margin-bottom:0.3rem; }
+      .oo-section-sub { font-size:0.88rem; color:#64748b; }
+      @media(max-width:600px){ .oo-grid { grid-template-columns:1fr; } .oo-tab { font-size:0.75rem; padding:0.45rem 0.8rem; } }
+    </style>
+
+<div class="oo-tabs-container" style="width:100%; max-width:900px; background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:2rem 2.25rem; margin-bottom:1.5rem; box-sizing:border-box;">
+
+      <div class="oo-section-label">WHAT EVERY PACKAGE INCLUDES — OUT OF THE BOX</div>
+      <div class="oo-section-headline">Built for every person on your team.</div>
+      <div class="oo-section-sub">Select your role to see exactly what the system does for you from day one.</div>
+
+      <div class="oo-tabs">
+        <button class="oo-tab active" onclick="ooTab('reps',this)">&#127939; Field Reps</button>
+        <button class="oo-tab" onclick="ooTab('managers',this)">&#128202; Sales Managers</button>
+        <button class="oo-tab" onclick="ooTab('ops',this)">&#9881; Operations</button>
+        <button class="oo-tab" onclick="ooTab('admin',this)">&#128203; Administration</button>
+        <button class="oo-tab" onclick="ooTab('leadership',this)">&#128081; Leadership</button>
+      </div>
+
+      <!-- FIELD REPS -->
+      <div id="oo-reps" class="oo-content active">
+        <div style="height:1px;background:rgba(255,255,255,0.06);margin:1.5rem 0 1.25rem;"></div>
+        <div style="text-align:left;">
+          <div style="font-size:0.9rem;font-weight:700;color:#e2e8f0;margin-bottom:0.2rem;">&#127939; For Your Field Reps</div>
+          <div style="font-size:0.82rem;color:#64748b;">Everything a rep needs to close cases, catch errors, and look like the smartest person in the OR.</div>
+        </div>
+        <div class="oo-grid">
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Instant pricing on any hospital and part number &mdash; sub-second, from their phone</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Revision pricing calculated automatically &mdash; correct list year, correct discount applied</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Billing system email cross-check &mdash; flags overcharges before the rep even knows to look</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Surgery sheet (D-ticket) filing &mdash; drop a photo, it&rsquo;s filed privately and deleted from the group</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>PO storage with the same privacy model &mdash; reps can only access their own documents</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Pull up any filed document instantly &mdash; by patient name, date, or hospital</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Competitor implant identification from X-rays &mdash; photograph the X-ray, get the manufacturer and model in seconds</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Live OR fluoroscopy reading &mdash; send a C-arm image from the OR, get implant identification and orientation data instantly</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Surgical technique documents on demand &mdash; 150+ product docs accessible by name or keyword</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Tray layout and instrument identification by part number &mdash; no more guessing in the OR</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Full product knowledge base &mdash; specs, clinical data, and competitive comparisons instantly</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Construct pricing breakdowns by hospital &mdash; exact kit prices and what bills separately</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Ask any clinical question and get a senior-rep-level answer &mdash; backed by 14+ years of field knowledge</div>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h5>Products</h5>
-        <ul>
-          <li><a href="pocket-agent.html">Pocket Agent AI</a></li>
-          <li><a href="prompt-packs.html">AI Prompt Packs</a></li>
-          <li><a href="distributor.html">Distributor System</a></li>
-          <li><a href="blueprint.html">Business Blueprint</a></li>
-          <li><a href="orthoops.html">OrthoOps AI</a></li>
-        </ul>
+      <!-- SALES MANAGERS -->
+      <div id="oo-managers" class="oo-content">
+        <div style="height:1px;background:rgba(255,255,255,0.06);margin:1.5rem 0 1.25rem;"></div>
+        <div style="text-align:left;">
+          <div style="font-size:0.9rem;font-weight:700;color:#e2e8f0;margin-bottom:0.2rem;">&#128202; For Your Sales Managers</div>
+          <div style="font-size:0.82rem;color:#64748b;">Territory intelligence, rep visibility, and onboarding so fast new hires are productive from day one.</div>
+        </div>
+        <div class="oo-grid">
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Rep activity visibility &mdash; who&rsquo;s using the system, what they&rsquo;re asking, and who&rsquo;s disengaged</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Territory intelligence &mdash; which hospitals are generating volume and which accounts are stalled</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>New rep onboarding &mdash; the system knows everything from day one, no shadowing required</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Surgeon profiling &mdash; build profiles on target surgeons including preferences, history, and volume</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Lead tracking &mdash; input target accounts, track outreach progress, and flag stalled opportunities</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Preference card building &mdash; surgeon-specific implant preferences on file and immediately accessible</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Competitive intelligence &mdash; what competitors are in your accounts and how your product compares</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Rep performance patterns &mdash; automatically flags reps who aren&rsquo;t engaging or submitting documents</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Institutional brain that transfers senior rep knowledge to every new hire automatically</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Every case, every rep, every hospital &mdash; one place, always current, no manual roll-up required</div>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="mailto:dimitris33ai@icloud.com">Contact</a></li>
-          <li><a href="https://vubration.gumroad.com" target="_blank" rel="noopener">Shop on Gumroad</a></li>
-          <li><a href="https://twitter.com/Vubration33" target="_blank" rel="noopener">Twitter/X</a></li>
-          <li><a href="https://github.com/Vubration" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
+      <!-- OPERATIONS -->
+      <div id="oo-ops" class="oo-content">
+        <div style="height:1px;background:rgba(255,255,255,0.06);margin:1.5rem 0 1.25rem;"></div>
+        <div style="text-align:left;">
+          <div style="font-size:0.9rem;font-weight:700;color:#e2e8f0;margin-bottom:0.2rem;">&#9881; For Your Operations Manager</div>
+          <div style="font-size:0.82rem;color:#64748b;">Full visibility over inventory, rep activity, tray management, and territory performance &mdash; without chasing anyone for updates.</div>
+        </div>
+        <div class="oo-grid">
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Tray audit tracking &mdash; reps upload photos, assets logged by location, all organized automatically</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Turn ratio analysis &mdash; tray inventory vs. surgical volume per rep and account, identify over- and under-allocation</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Rep activity dashboard &mdash; see which reps are active, what they&rsquo;re asking, and where gaps exist</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Instrument tray intelligence &mdash; warehouse team can ID any instrument by part number instantly</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Hospital volume mapping &mdash; which accounts are generating the most cases and document activity</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Territory oversight &mdash; full visibility into rep coverage, account engagement, and field activity</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Inventory allocation intelligence &mdash; data to support tray requests, additions, and removals</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>System health monitoring &mdash; daily automated checks ensure everything is running at peak performance</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>New rep onboarding &mdash; system knows your entire product line and pricing from day one, no ramp-up time</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Knowledge that compounds &mdash; every interaction makes the system smarter, your ops edge grows daily</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Tray photo analysis &mdash; photograph a stack of trays and get an instant list of every tray type, label, and serial number identified</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Bin contents verification &mdash; photograph an implant bin, the system reads every implant, cross-references the surgical technique, and tells you if the bin is complete</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Label and serial number reading &mdash; any implant label, tote label, or bin tag photographed and processed instantly</div>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h5>Resources</h5>
-        <ul>
-          <li><a href="blog.html">Free Guides</a></li>
-          <li><a href="https://vubration.gumroad.com" target="_blank" rel="noopener">All Downloads</a></li>
-          <li><a href="mailto:dimitris33ai@icloud.com">Support</a></li>
-          <li><a href="https://orthoopsai.com" target="_blank" rel="noopener">OrthoOps AI Site</a></li>
-        </ul>
+      <!-- ADMINISTRATION -->
+      <div id="oo-admin" class="oo-content">
+        <div style="height:1px;background:rgba(255,255,255,0.06);margin:1.5rem 0 1.25rem;"></div>
+        <div style="text-align:left;">
+          <div style="font-size:0.9rem;font-weight:700;color:#e2e8f0;margin-bottom:0.2rem;">&#128203; For Your Admin Team</div>
+          <div style="font-size:0.82rem;color:#64748b;">The manual work your office team dreads every month gets done automatically. They focus on exceptions, not data entry.</div>
+        </div>
+        <div class="oo-grid">
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Five corporate reports cross-referenced automatically into one master file &mdash; rebuilt on every upload</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>PO status tracking at a glance &mdash; not yet processed, pending, disputed, or completed</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Commission reconciliation support &mdash; discrepancies flagged before statements go out, not after</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Surgery sheet data extraction &mdash; patient info, dates, and hospitals pulled automatically from photos</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Document naming and filing &mdash; consistent naming convention applied automatically, no manual sorting</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Dispute logging &mdash; every pricing discrepancy tracked with evidence ready to send to corporate</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Credit rebuild tracking &mdash; reversals and re-entries paired automatically so nothing gets double-counted</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Retrieve any filed document instantly &mdash; by rep name, date, hospital, or patient last name</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Human notes in the master file are sacred &mdash; the system never overwrites what your team adds manually</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Upload fresh reports and the master file rebuilds automatically &mdash; no spreadsheet manipulation required</div>
+        </div>
+      </div>
+
+      <!-- LEADERSHIP -->
+      <div id="oo-leadership" class="oo-content">
+        <div style="height:1px;background:rgba(255,255,255,0.06);margin:1.5rem 0 1.25rem;"></div>
+        <div style="text-align:left;">
+          <div style="font-size:0.9rem;font-weight:700;color:#e2e8f0;margin-bottom:0.2rem;">&#128081; For Leadership &amp; Ownership</div>
+          <div style="font-size:0.82rem;color:#64748b;">The visibility, revenue protection, and scale you can&rsquo;t get without hiring three more people &mdash; at a fraction of the cost.</div>
+        </div>
+        <div class="oo-grid">
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Real-time operational visibility &mdash; what&rsquo;s moving, what&rsquo;s stuck, and what needs your attention today</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Revenue protection &mdash; clawback prevention and billing error recovery before money walks out the door</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Rep productivity metrics &mdash; case volume, document compliance, and system engagement per rep</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Territory growth intelligence &mdash; opportunity mapping by surgeon and hospital across your entire footprint</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Commission accuracy &mdash; disputes surfaced before statements go out, not after they&rsquo;re signed off</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Competitive positioning &mdash; a live picture of what&rsquo;s in your accounts vs. what should be</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Monthly operations summary &mdash; automated report of system activity, dollars recovered, disputes closed</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Scale without headcount &mdash; the system handles what would require 2&ndash;3 additional admin hires</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Every new rep onboards at full speed &mdash; no training lag, no shadowing period, no tribal knowledge gap</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>The institutional brain grows every night &mdash; your best rep&rsquo;s knowledge becomes the floor for everyone</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Unlimited groups &mdash; one Field Force for all reps, or separate territory teams each with their own AI assistant, all feeding the same data warehouse</div>
+          <div class="oo-item"><span class="oo-check">&#10003;</span>Territory team structure &mdash; senior reps lead their own groups, junior reps report through them, all unified under one system</div>
+        </div>
+      </div>
+
+    </div><!-- close oo-tabs and outer container -->
+
+    <script>
+      function ooTab(id, btn) {
+        var contents = document.querySelectorAll('.oo-content');
+        for (var i = 0; i < contents.length; i++) { contents[i].classList.remove('active'); }
+        var tabs = document.querySelectorAll('.oo-tab');
+        for (var i = 0; i < tabs.length; i++) { tabs[i].classList.remove('active'); }
+        var el = document.getElementById('oo-' + id);
+        if (el) { el.classList.add('active'); }
+        if (btn) { btn.classList.add('active'); }
+      }
+      (function() {
+        var tabs = document.querySelectorAll('.oo-tab');
+        for (var i = 0; i < tabs.length; i++) {
+          (function(btn) {
+            btn.addEventListener('touchend', function(e) {
+              e.preventDefault();
+              var target = e.currentTarget;
+              var id = target.getAttribute('onclick').match(/ooTab\('([^']+)'/)[1];
+              ooTab(id, target);
+            });
+          })(tabs[i]);
+        }
+      })();
+    </script>
+
+    <!-- Step 2: Monthly support -->
+    <div class="pricing-card" style="max-width:540px; width:100%;">
+      <div style="color:var(--muted); font-size:0.72rem; font-weight:700; letter-spacing:0.1em; margin-bottom:0.5rem;">OPTIONAL ONGOING SUPPORT</div>
+      <div class="price-amount"><span>$</span>499</div>
+      <div class="price-period">per month &mdash; cancel anytime</div>
+      <p style="color:var(--muted); font-size:0.9rem; margin:0.75rem 0 1.25rem; text-align:center;">Keep us on call after you're live. Cancel when your team is fully self-sufficient.</p>
+
+      <ul class="pricing-features">
+        <li>Same-day support when something breaks</li>
+        <li>Monthly pricing file integration &amp; verification</li>
+        <li>New rep setup &amp; onboarding (unlimited)</li>
+        <li>System updates &amp; performance tuning</li>
+        <li>Ongoing institutional brain improvements</li>
+        <li>New hospital &amp; contract configurations</li>
+        <li>Direct access to the developer &mdash; not a help desk</li>
+        <li>Your system stays sharp while you focus on the business</li>
+      </ul>
+
+      <a href="mailto:dimitris33ai@icloud.com" class="btn-primary" style="width: 100%; text-align: center; display: block; font-size: 1.05rem;">
+        Start with a Demo →
+      </a>
+
+      <div class="roi-callout">
+        💡 <strong>The math is simple:</strong> If OrthoOps AI catches one billing error per week, it pays for itself in the first month.
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2026 Vubration LLC · All rights reserved · Digital products delivered instantly</p>
-      <p>Built with AI. Powered by ambition. <a href="mailto:dimitris33ai@icloud.com">dimitris33ai@icloud.com</a></p>
+    <!-- API Tokens Note -->
+    <div class="api-tokens-callout" style="max-width: 720px; margin: 1.25rem auto 0; background: rgba(15,23,42,0.5); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.25rem 1.5rem; display:flex; justify-content:space-between; align-items:flex-start; gap:1.5rem;">
+      <div>
+        <div style="color:var(--white); font-weight:700; font-size:0.9rem; margin-bottom:0.4rem;">&#9889; AI API Tokens — Billed Separately</div>
+        <p style="color:var(--muted); font-size:0.95rem; margin:0;">Create free accounts with Anthropic and OpenAI. Usage billed directly by them. A typical 30-rep distributorship (~$30M/yr revenue) runs <strong style="color:var(--white);">$150–$400/month</strong>. The system minimizes consumption automatically.</p>
+      </div>
+      <div style="text-align:right; flex-shrink:0;">
+        <div style="color:var(--gold); font-weight:800; font-size:1.1rem; white-space:nowrap;">$150–$400</div>
+        <div style="color:var(--muted); font-size:0.75rem;">per month</div>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ─── BOOK A DEMO CTA ─── -->
+<section id="demo" style="background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(245,158,11,0.05) 100%); border-top: 1px solid rgba(59,130,246,0.15); border-bottom: 1px solid rgba(59,130,246,0.15);">
+  <div class="section-label">Ready to See It?</div>
+  <h2 class="section-headline" style="font-size:clamp(1.75rem,4vw,3rem);">See OrthoOps AI running live<br>in your operation.</h2>
+  <p class="section-sub">No slides. No screenshots. We'll show you the real system — pricing lookups, document filing, billing cross-checks — live, on your accounts.</p>
+
+  <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin-top:1rem;">
+    <a href="mailto:dimitris33ai@icloud.com?subject=Demo Request — OrthoOps AI&body=Hi,%0A%0AI'd like to see OrthoOps AI in action. Here's a bit about our operation:%0A%0ACompany:%0ANumber of reps:%0AManufacturer(s) we distribute:%0A%0ABest time to connect:" class="btn-primary" style="font-size:1.15rem; padding:1rem 3rem; box-shadow: 0 0 50px rgba(59,130,246,0.4);">
+      Book a Demo →
+    </a>
+    <p style="color:#64748b; font-size:0.82rem; margin:0;">Email dimitris33ai@icloud.com &middot; We respond same day</p>
+  </div>
+
+  <div class="demo-stats-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:700px; margin:3rem auto 0; width:100%;">
+    <div style="text-align:center;">
+      <div style="color:#f59e0b; font-size:1.5rem; font-weight:800;">Same day</div>
+      <div style="color:#64748b; font-size:0.82rem; margin-top:0.25rem;">Response guarantee</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="color:#f59e0b; font-size:1.5rem; font-weight:800;">30 min</div>
+      <div style="color:#64748b; font-size:0.82rem; margin-top:0.25rem;">Live demo, your questions</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="color:#f59e0b; font-size:1.5rem; font-weight:800;">No contract</div>
+      <div style="color:#64748b; font-size:0.82rem; margin-top:0.25rem;">To see it in action</div>
+    </div>
+  </div>
+
+  <!-- Mobile responsive: demo stats 1-column -->
+  <style>
+    @media (max-width: 768px) {
+      .demo-stats-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how">
+  <div class="section-label">Process</div>
+  <h2 class="section-headline">Up and running in days, not months.</h2>
+  <p class="section-sub" style="text-align:center; margin-left:auto; margin-right:auto;">No enterprise software implementation. No six-month onboarding. No consultants.</p>
+
+  <div class="timeline" style="max-width:640px; margin:0 auto;">
+
+    <div class="timeline-step">
+      <div class="step-line"></div>
+      <div class="step-dot">1</div>
+      <div class="step-body">
+        <h3>Configure</h3>
+        <p>We load your pricing files, rep roster, and product line. We build your Google Drive structure - folders for every rep, every document type, every report. Your team gets access credentials. Your data lives in the cloud, accessible to everyone who needs it.</p>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-line"></div>
+      <div class="step-dot">2</div>
+      <div class="step-body">
+        <h3>Train</h3>
+        <p>4-6 hours with your operations lead. How to manage the system, restart when needed, access Google Drive, add new reps, and handle anything that comes up. Your team walks away self-sufficient - not dependent on us for every issue.</p>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-line"></div>
+      <div class="step-dot">3</div>
+      <div class="step-body">
+        <h3>Launch</h3>
+        <p>Reps join their private Telegram group. One message to start. Warehouse team is live. Admin connects to Office Intelligence. Everything is running - usually within a week of receiving the unit.</p>
+      </div>
+    </div>
+
+    <div class="timeline-step">
+      <div class="step-dot">4</div>
+      <div class="step-body">
+        <h3>Compound</h3>
+        <p>Every interaction makes the system smarter. Pricing knowledge, clinical insights, document history - it all accumulates. Month three looks nothing like day one. Your team stops thinking of it as software. It becomes how the operation runs.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">OrthoOps<span> AI</span></div>
+  <p class="footer-tagline">Built for orthopedic distributors.</p>
+  <br />
+  <a href="mailto:dimitris33ai@icloud.com" class="footer-email">dimitris33ai@icloud.com</a>
+  <br /><br />
+  <a href="mailto:dimitris33ai@icloud.com" class="btn-primary">Book a Demo</a>
+  <div class="footer-copy">© 2026 OrthoOps AI. All rights reserved.</div>
 </footer>
 
-<script src="main.js"></script>
+<script>
+  // Generate subtle floating particles in hero
+  (function() {
+    const container = document.getElementById('particles');
+    const colors = ['rgba(59,130,246,0.3)', 'rgba(245,158,11,0.2)', 'rgba(59,130,246,0.15)'];
+    for (let i = 0; i < 20; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 4 + 1;
+      p.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        left: ${Math.random() * 100}%;
+        bottom: -10px;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        animation-duration: ${Math.random() * 15 + 10}s;
+        animation-delay: ${Math.random() * 10}s;
+      `;
+      container.appendChild(p);
+    }
+  })();
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Intersection observer for fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.problem-card, .solution-card, .stat-card, .brain-node, .timeline-step').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
 </body>
 </html>
