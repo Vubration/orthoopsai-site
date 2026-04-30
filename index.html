@@ -36,7 +36,8 @@
     a { color: var(--accent-light); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1.25rem 2rem; }
+    .nav { display: flex; justify-content: flex-start; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem; }
+    .nav-logo { height: 180px; border-radius: 14px; }
     .nav-brand { font-weight: 800; font-size: 1.2rem; color: var(--text); letter-spacing: -0.02em; }
     .nav-brand span { color: var(--accent-light); }
 
@@ -240,13 +241,15 @@
       .tiles-section { padding: 1rem 1.25rem 1.5rem; }
       .section { padding: 1.5rem 1.25rem; }
       .proof-bar { gap: 1.25rem; }
+      .nav { justify-content: center; padding: 1.25rem 1.25rem; }
+      .nav-logo { height: 140px; }
     }
   </style>
 </head>
 <body>
 
   <nav class="nav">
-    <a href="/" style="display:flex;align-items:center;text-decoration:none;"><img src="orthoops-logo.jpg" alt="OrthoOps AI" style="height:65px;border-radius:10px;" /></a>
+    <a href="/" style="display:flex;align-items:center;text-decoration:none;"><img src="orthoops-logo.jpg" alt="OrthoOps AI" class="nav-logo" /></a>
   </nav>
 
   <!-- Hero: Headline -->
