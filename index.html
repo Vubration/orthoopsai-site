@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OrthoOps AI — Replace Your Back Office with AI</title>
-  <meta name="description" content="A fully automated AI operations system for orthopedic surgical distributors. Replace $300K in office staff with a Mac Mini and one person. Three ways to buy.">
+  <title>OrthoOps AI — Replace Your Back Office with One Mac Mini</title>
+  <meta name="description" content="A fully automated AI system for orthopedic surgical distributors. 6 AI agents, 2,000+ micro-rules. Three ways to buy. Call Brian directly.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,143 +21,127 @@
       --accent-light: #a78bfa;
       --green: #22c55e;
     }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     a { color: var(--accent-light); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Nav */
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.25rem 2rem;
-    }
+    .nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1.25rem 2rem; }
     .nav-brand { font-weight: 800; font-size: 1.2rem; color: var(--text); letter-spacing: -0.02em; }
     .nav-brand span { color: var(--accent-light); }
-    .nav-link { color: var(--muted); font-size: 0.85rem; font-weight: 500; }
 
-    /* Hero — pricing first */
-    .hero {
-      max-width: 1100px;
+    /* Hero: headline + image */
+    .hero-top {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 2.5rem 2rem 1rem;
+      padding: 2rem 2rem 1.5rem;
       text-align: center;
     }
-    .hero h1 {
-      font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+    .hero-top h1 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
       font-weight: 900;
-      line-height: 1.12;
+      line-height: 1.15;
       letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
-    .hero h1 .highlight {
+    .hero-top h1 .hl {
       background: linear-gradient(135deg, var(--accent-light), #c084fc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .hero-sub {
-      font-size: 1.1rem;
+    .hero-top p {
+      font-size: 1rem;
       color: var(--muted);
-      max-width: 620px;
-      margin: 0 auto 2rem;
+      max-width: 580px;
+      margin: 0 auto;
     }
-
-    /* Hero layout: image left, pricing right on desktop */
-    .hero-content {
-      display: flex;
-      align-items: flex-start;
-      gap: 2.5rem;
-      margin-top: 1.5rem;
-    }
-    .hero-left {
-      flex: 0 0 320px;
+    .hero-img-wrap {
       text-align: center;
+      padding: 1.25rem 2rem 0.5rem;
     }
-    .hero-img {
+    .hero-img-wrap img {
+      max-width: 340px;
       width: 100%;
-      max-width: 320px;
-      border-radius: 16px;
-      margin-bottom: 0.75rem;
+      border-radius: 14px;
     }
-    .hero-caption {
-      font-size: 0.8rem;
+    .hero-img-wrap p {
+      font-size: 0.75rem;
       color: var(--muted);
       font-style: italic;
-    }
-    .hero-right {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      margin-top: 0.5rem;
     }
 
-    /* Mini price cards in hero */
-    .mini-card {
+    /* Three tiles */
+    .tiles-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 2rem;
+    }
+    .tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .tile {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.25rem 1.5rem;
+      border-radius: 16px;
+      padding: 1.75rem;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      transition: border-color 0.2s;
+      flex-direction: column;
     }
-    .mini-card:hover { border-color: var(--accent); }
-    .mini-card.featured {
+    .tile.featured {
       border-color: var(--accent);
-      box-shadow: 0 0 20px rgba(124,58,237,0.12);
+      box-shadow: 0 0 25px rgba(124,58,237,0.12);
     }
-    .mini-card-left h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-    .mini-card-left p {
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-    .mini-card-right {
-      text-align: right;
-      flex-shrink: 0;
-    }
-    .mini-card-right .price {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-    }
-    .mini-card-right .price-note {
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-    .mini-tag {
+    .tile-badge {
       display: inline-block;
       background: var(--accent);
       color: #fff;
       font-size: 0.6rem;
       font-weight: 700;
-      padding: 0.15rem 0.5rem;
+      padding: 0.2rem 0.65rem;
       border-radius: 100px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+      align-self: flex-start;
     }
-
+    .tile h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .tile .tile-price {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0.5rem 0 0.15rem;
+    }
+    .tile .tile-price-note { font-size: 0.75rem; color: var(--muted); margin-bottom: 1rem; }
+    .tile .tile-price-alt { font-size: 0.8rem; color: var(--accent-light); font-weight: 600; margin-bottom: 1rem; }
+    .tile ul { list-style: none; margin-bottom: 1.25rem; flex-grow: 1; }
+    .tile ul li {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0.3rem 0 0.3rem 1.4rem;
+      position: relative;
+      line-height: 1.45;
+    }
+    .tile ul li::before { content: "✓"; color: var(--green); font-weight: 700; position: absolute; left: 0; }
+    .tile .tile-divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 0.75rem 0;
+    }
+    .tile .tile-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
     .cta-btn {
-      display: inline-block;
+      display: block;
       text-align: center;
-      padding: 0.8rem 1.5rem;
+      padding: 0.8rem 1.25rem;
       border-radius: 10px;
       font-weight: 600;
       font-size: 0.9rem;
@@ -171,119 +155,67 @@
     .cta-btn.outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
     .cta-btn.outline:hover { border-color: var(--accent); text-decoration: none; }
 
-    /* Sections */
-    .section {
-      max-width: 1100px;
+    /* Call Brian bar */
+    .call-bar {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 2rem;
+      padding: 1rem 2rem 2rem;
+      text-align: center;
     }
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
-    .section-sub {
+    .call-bar p {
+      font-size: 1rem;
       color: var(--muted);
-      margin-bottom: 1.75rem;
-      font-size: 0.9rem;
+    }
+    .call-bar a {
+      color: var(--accent-light);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .call-bar .call-name {
+      color: var(--text);
+      font-weight: 600;
     }
 
+    /* Sections below the fold */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+    }
+    .section-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
+    .section-sub { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
+      gap: 1.1rem;
     }
     .feature-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 1.25rem;
+      padding: 1.15rem;
     }
-    .feature-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .feature-card p { color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
-
-    /* Proof bar */
+    .feature-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .feature-card p { color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
     .proof-bar {
       display: flex;
       justify-content: center;
       gap: 2.5rem;
       flex-wrap: wrap;
-      padding: 1.5rem 2rem;
-      max-width: 1100px;
+      padding: 1.25rem 2rem;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .proof-item { text-align: center; }
-    .proof-item h4 { font-size: 1.25rem; font-weight: 800; color: var(--accent-light); }
+    .proof-item h4 { font-size: 1.2rem; font-weight: 800; color: var(--accent-light); }
     .proof-item p { font-size: 0.7rem; color: var(--muted); }
-
-    /* Detailed pricing */
-    .pricing-detail {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .price-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.75rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-    .price-card.featured {
-      border-color: var(--accent);
-      box-shadow: 0 0 25px rgba(124,58,237,0.12);
-    }
-    .price-card .card-badge {
-      position: absolute;
-      top: -11px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 0.25rem 0.85rem;
-      border-radius: 100px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    .price-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.15rem; }
-    .price-card .card-desc { color: var(--muted); font-size: 0.8rem; margin-bottom: 0.75rem; }
-    .price-card .card-price { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.15rem; }
-    .price-card .card-price-note { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.25rem; }
-    .price-card .card-price-alt { font-size: 0.8rem; color: var(--accent-light); font-weight: 600; margin-bottom: 1rem; }
-    .price-card ul { list-style: none; margin-bottom: 1.25rem; flex-grow: 1; }
-    .price-card ul li {
-      font-size: 0.8rem;
-      color: var(--muted);
-      padding: 0.3rem 0 0.3rem 1.4rem;
-      position: relative;
-    }
-    .price-card ul li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 700;
-      position: absolute;
-      left: 0;
-    }
-
-    /* FAQ */
-    .faq-item { border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1rem 0; }
     .faq-item:last-child { border-bottom: none; }
-    .faq-item h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .faq-item p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-
+    .faq-item h3 { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .faq-item p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .divider { max-width: 1200px; margin: 0 auto; border: 0; border-top: 1px solid var(--border); }
     .footer {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
       text-align: center;
@@ -291,23 +223,12 @@
     }
     .footer p { font-size: 0.75rem; color: var(--muted); }
 
-    .divider {
-      max-width: 1100px;
-      margin: 0 auto;
-      border: 0;
-      border-top: 1px solid var(--border);
-    }
-
-    @media (max-width: 768px) {
-      .hero { padding: 1.5rem 1.25rem 1rem; }
-      .hero-content { flex-direction: column; align-items: center; }
-      .hero-left { flex: none; width: 100%; max-width: 280px; }
-      .hero-right { width: 100%; }
-      .mini-card { flex-direction: column; text-align: center; }
-      .mini-card-right { text-align: center; }
-      .section, .pricing-detail { padding: 2rem 1.25rem; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .proof-bar { gap: 1.5rem; }
+    @media (max-width: 900px) {
+      .tiles-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .hero-top { padding: 1.5rem 1.25rem 1rem; }
+      .tiles-section { padding: 1rem 1.25rem 1.5rem; }
+      .section { padding: 1.5rem 1.25rem; }
+      .proof-bar { gap: 1.25rem; }
     }
   </style>
 </head>
@@ -315,69 +236,148 @@
 
   <nav class="nav">
     <div class="nav-brand">OrthoOps <span>AI</span></div>
-    <a class="nav-link" href="#pricing-detail">Pricing</a>
   </nav>
 
-  <!-- HERO: Headline + Mac Mini + 3 Tiers -->
-  <section class="hero">
-    <h1>Replace Your Entire Back Office<br>with <span class="highlight">One Mac Mini</span></h1>
-    <p class="hero-sub">A fully automated AI system for orthopedic surgical distributors. Stop paying $300K/year for tasks a machine handles better. 6 AI agents. 2,000+ operational rules. Runs 24/7 on your desk.</p>
+  <!-- Hero: Headline -->
+  <section class="hero-top">
+    <h1>Replace Your Entire Back Office<br>with <span class="hl">One Mac Mini</span></h1>
+    <p>Fully automated AI operations for orthopedic surgical distributors. Stop paying $300K/year in staff for tasks a machine handles better, faster, and 24/7.</p>
+  </section>
 
-    <div class="hero-content">
-      <div class="hero-left">
-        <img src="mac-mini.jpg" alt="Mac Mini running OrthoOps AI" class="hero-img" />
-        <p class="hero-caption">Everything runs on this. Your data never leaves your office.</p>
+  <!-- Mac Mini Image -->
+  <div class="hero-img-wrap">
+    <img src="mac-mini.jpg" alt="Mac Mini running OrthoOps AI" />
+    <p>Everything runs on this. Your data never leaves your office.</p>
+  </div>
+
+  <!-- Three Product Tiles -->
+  <section class="tiles-section">
+    <div class="tiles-grid">
+
+      <!-- TILE 1: The File -->
+      <div class="tile">
+        <h3>📄 The File</h3>
+        <div class="tile-price">$1,999</div>
+        <div class="tile-price-note">One-time purchase · Instant delivery</div>
+
+        <p class="tile-label">What you get</p>
+        <ul>
+          <li>Complete installation guide — 130+ pages, step-by-step</li>
+          <li>2,000+ micro-rules from a live deployment</li>
+          <li>6 AI agent configurations ready to deploy</li>
+          <li>Commission reconciliation framework</li>
+          <li>Pricing database setup</li>
+          <li>All future version updates included</li>
+        </ul>
+
+        <hr class="tile-divider" />
+        <p class="tile-label">How it works</p>
+        <ul>
+          <li>You buy — file delivered instantly</li>
+          <li>You have your own Mac Mini (M4, ~$600)</li>
+          <li>You install OpenClaw (free, open-source)</li>
+          <li>Your AI reads the guide and builds your system with you</li>
+          <li>1 full day of phone support included to get you started</li>
+          <li>3 days of follow-up questions via text/call</li>
+        </ul>
+
+        <a href="mailto:hello@orthoopsai.com?subject=Purchase%20-%20The%20File" class="cta-btn outline">Get the File →</a>
       </div>
 
-      <div class="hero-right">
-        <!-- Tier 1 -->
-        <a href="#pricing-detail" style="text-decoration:none; color:inherit;">
-          <div class="mini-card">
-            <div class="mini-card-left">
-              <h3>📄 The File</h3>
-              <p>You have a Mac Mini. You want to build it yourself. Full installation guide + 2,000 micro-rules.</p>
-            </div>
-            <div class="mini-card-right">
-              <div class="price">$1,499</div>
-              <div class="price-note">Instant delivery</div>
-            </div>
-          </div>
-        </a>
+      <!-- TILE 2: Pre-Installed Mac Mini -->
+      <div class="tile featured">
+        <span class="tile-badge">Most Popular</span>
+        <h3>💻 Pre-Installed Mac Mini</h3>
+        <div class="tile-price">$4,999</div>
+        <div class="tile-price-note">You ship us your Mac Mini</div>
+        <div class="tile-price-alt">$5,599 if we buy you a brand new one</div>
 
-        <!-- Tier 2 -->
-        <a href="#pricing-detail" style="text-decoration:none; color:inherit;">
-          <div class="mini-card featured">
-            <div class="mini-card-left">
-              <span class="mini-tag">Most Popular</span>
-              <h3>💻 Pre-Installed</h3>
-              <p>Ship us your Mac Mini or we buy one. We install everything. You plug it in and go.</p>
-            </div>
-            <div class="mini-card-right">
-              <div class="price">$4,999</div>
-              <div class="price-note">$5,599 if we provide the Mac</div>
-            </div>
-          </div>
-        </a>
+        <p class="tile-label">What you get</p>
+        <ul>
+          <li>Everything in The File</li>
+          <li>OpenClaw fully installed and configured</li>
+          <li>All 6 AI agents wired up and responding</li>
+          <li>API keys configured and tested</li>
+          <li>Google Drive folder structure built</li>
+          <li>Your AI assistant ready to talk the moment you plug in</li>
+          <li>Ships to your door — plug in, power on, start talking</li>
+        </ul>
 
-        <!-- Tier 3 -->
-        <a href="#pricing-detail" style="text-decoration:none; color:inherit;">
-          <div class="mini-card">
-            <div class="mini-card-left">
-              <h3>🤝 Full Onboarding</h3>
-              <p>We install it, train your team, and work with you for 3 months until you're fully operational.</p>
-            </div>
-            <div class="mini-card-right">
-              <div class="price">$10,000+</div>
-              <div class="price-note">$5K up + milestones</div>
-            </div>
-          </div>
-        </a>
+        <hr class="tile-divider" />
+        <p class="tile-label">What I need from you</p>
+        <ul>
+          <li>Download Telegram on your phone</li>
+          <li>Send me your Telegram chat ID</li>
+          <li>Get an Anthropic API key (I'll walk you through it — 5 min)</li>
+          <li>Get a Google API key (same — 5 min)</li>
+          <li>Ship your Mac Mini to me (or I buy one for you)</li>
+        </ul>
+
+        <hr class="tile-divider" />
+        <p class="tile-label">What happens next</p>
+        <ul>
+          <li>I install everything and test it</li>
+          <li>I ship it back ready to go</li>
+          <li>You plug it in — your AI greets you</li>
+          <li>You create your Telegram groups with your team</li>
+          <li>Your AI walks you through the rest of the build</li>
+        </ul>
+
+        <a href="mailto:hello@orthoopsai.com?subject=Purchase%20-%20Pre-Installed%20Mac%20Mini" class="cta-btn primary">Get Pre-Installed →</a>
       </div>
-      <p style="margin-top:1rem; text-align:center; font-size:0.9rem; color:var(--muted);">Talk to the developer directly — <a href="tel:+16562248960" style="color:var(--accent-light); font-weight:600;">Brian: (656) 224-8960</a></p>
+
+      <!-- TILE 3: Full Onboarding -->
+      <div class="tile">
+        <h3>🤝 Full Onboarding</h3>
+        <div class="tile-price">$20,000</div>
+        <div class="tile-price-note">Installment payments available</div>
+
+        <p class="tile-label">What you get</p>
+        <ul>
+          <li>Everything in Pre-Installed</li>
+          <li>Mac Mini included (or use yours)</li>
+          <li>3 months of dedicated, hands-on support from the developer</li>
+          <li>All Telegram groups created and configured</li>
+          <li>Your entire team onboarded one by one</li>
+          <li>Pricing database built from YOUR actual files</li>
+          <li>Commission system configured to YOUR rates</li>
+          <li>Micro-rules customized to YOUR specific workflows</li>
+          <li>You reach the same operational level I run daily</li>
+        </ul>
+
+        <hr class="tile-divider" />
+        <p class="tile-label">How payments work</p>
+        <ul>
+          <li>Upfront deposit to start the install</li>
+          <li>Milestone payments as we hit onboarding checkpoints</li>
+          <li>Final payment when you're fully operational</li>
+          <li>You're never paying for work that hasn't been done</li>
+        </ul>
+
+        <hr class="tile-divider" />
+        <p class="tile-label">Who this is for</p>
+        <ul>
+          <li>Distributors doing $100M+ who want it done right</li>
+          <li>Operations managers who want zero guesswork</li>
+          <li>Teams that want to be fully live in 90 days, guaranteed</li>
+        </ul>
+
+        <a href="mailto:hello@orthoopsai.com?subject=Inquiry%20-%20Full%20Onboarding" class="cta-btn outline">Let's Talk →</a>
+      </div>
+
     </div>
   </section>
 
-  <!-- Proof bar -->
+  <!-- Call Brian -->
+  <div class="call-bar">
+    <p>Have questions? Want to make sure this is real? <span class="call-name">Call Brian directly.</span></p>
+    <p style="margin-top:0.4rem;"><a href="tel:+16562248960">(656) 224-8960</a></p>
+    <p style="margin-top:0.25rem; font-size:0.8rem; color:var(--muted);">I built this. I use it every day. I'll answer any question you have.</p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Proof -->
   <div class="proof-bar">
     <div class="proof-item"><h4>30+</h4><p>Field reps managed daily</p></div>
     <div class="proof-item"><h4>2,000+</h4><p>Micro-rules battle-tested</p></div>
@@ -389,100 +389,32 @@
 
   <!-- What It Does -->
   <section class="section">
-    <h2 class="section-title">What It Does</h2>
+    <h2 class="section-title">What It Actually Does</h2>
     <p class="section-sub">Six AI agents handle your operations around the clock.</p>
     <div class="features">
       <div class="feature-card">
         <h3>⚡ Pricing Lookups</h3>
-        <p>Rep texts a question from the field. Gets the contract price in seconds. Cross-referenced against your database automatically.</p>
+        <p>Rep texts a question. Gets the contract price in seconds. Cross-referenced automatically.</p>
       </div>
       <div class="feature-card">
         <h3>📄 Document Processing</h3>
-        <p>D-tickets, POs, surgical reports — photographed, read (even handwriting), extracted, filed, and cross-referenced. No typing.</p>
+        <p>D-tickets, POs, surgical reports — photographed, read, extracted, filed. Even handwriting.</p>
       </div>
       <div class="feature-card">
-        <h3>💰 Commission Reconciliation</h3>
-        <p>Two master files running in parallel — PO tracking and commission tracking. Every discrepancy flagged automatically.</p>
+        <h3>💰 Commissions</h3>
+        <p>Dual master files. PO tracking and commission tracking in parallel. Every discrepancy flagged.</p>
       </div>
       <div class="feature-card">
         <h3>📦 Asset Tracking</h3>
-        <p>Know where every tray is, who had it last, what condition it's in. Photo audits processed automatically.</p>
+        <p>Where every tray is, who had it last, what condition. Photo audits processed automatically.</p>
       </div>
       <div class="feature-card">
-        <h3>🧠 It Learns Your Business</h3>
-        <p>Every day it gets smarter about how YOUR operation works. Your reps' habits, your hospitals' quirks, your pricing exceptions.</p>
+        <h3>🧠 Learns Your Business</h3>
+        <p>Gets smarter every day about your reps, your hospitals, your pricing exceptions, your quirks.</p>
       </div>
       <div class="feature-card">
-        <h3>🔒 Your Hardware, Your Data</h3>
-        <p>Runs on a Mac Mini in your office. No cloud. No vendor access. No monthly platform fees. You own everything.</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- Detailed Pricing -->
-  <section class="pricing-detail" id="pricing-detail">
-    <h2 class="section-title" style="text-align:center;">Three Ways to Get Started</h2>
-    <p class="section-sub" style="text-align:center;">Every option includes the same proven system. Pick the level of support you want.</p>
-
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>The File</h3>
-        <p class="card-desc">For operators who want to build it themselves.</p>
-        <div class="card-price">$1,499</div>
-        <div class="card-price-note">One-time purchase</div>
-        <div class="card-price-alt">Instant delivery after checkout</div>
-        <ul>
-          <li>Complete installation guide (130+ pages)</li>
-          <li>2,000+ battle-tested micro-rules</li>
-          <li>6 agent configurations</li>
-          <li>Week-by-week build process</li>
-          <li>Commission reconciliation framework</li>
-          <li>Pricing database setup guide</li>
-          <li>Your AI walks you through the build</li>
-          <li>All future updates included</li>
-        </ul>
-        <a href="mailto:hello@orthoopsai.com?subject=Purchase%20-%20The%20File%20($1,499)" class="cta-btn outline">Get the File →</a>
-      </div>
-
-      <div class="price-card featured">
-        <div class="card-badge">Most Popular</div>
-        <h3>Pre-Installed</h3>
-        <p class="card-desc">We install it. You plug it in and go.</p>
-        <div class="card-price">$4,999</div>
-        <div class="card-price-note">You ship us your Mac Mini</div>
-        <div class="card-price-alt">$5,599 if we provide the Mac Mini</div>
-        <ul>
-          <li>Everything in The File</li>
-          <li>Mac Mini included (or use yours)</li>
-          <li>OpenClaw fully installed</li>
-          <li>All 6 agents configured and responding</li>
-          <li>API keys set up and tested</li>
-          <li>Google Drive structure built</li>
-          <li>Your AI ready to talk on arrival</li>
-          <li>Ships to your door, plug in and go</li>
-        </ul>
-        <a href="mailto:hello@orthoopsai.com?subject=Purchase%20-%20Pre-Installed%20($4,999)" class="cta-btn primary">Get Pre-Installed →</a>
-      </div>
-
-      <div class="price-card">
-        <h3>Full Onboarding</h3>
-        <p class="card-desc">We build it with you. 3 months, hands-on.</p>
-        <div class="card-price">$10,000+</div>
-        <div class="card-price-note">Installment payments available</div>
-        <div class="card-price-alt">3 months of direct support</div>
-        <ul>
-          <li>Everything in Pre-Installed</li>
-          <li>All Telegram groups created</li>
-          <li>Your team onboarded one by one</li>
-          <li>Pricing database built from your files</li>
-          <li>Commission system configured to your rates</li>
-          <li>Micro-rules customized to your workflows</li>
-          <li>Direct access to the builder for 3 months</li>
-          <li>You reach full operational level</li>
-        </ul>
-        <a href="mailto:hello@orthoopsai.com?subject=Inquiry%20-%20Full%20Onboarding%20($9,999)" class="cta-btn outline">Let's Talk →</a>
+        <h3>🔒 Your Hardware</h3>
+        <p>Runs on a Mac Mini in your office. No cloud. No vendor access. You own everything.</p>
       </div>
     </div>
   </section>
@@ -495,32 +427,31 @@
     <div style="margin-top:1rem;">
       <div class="faq-item">
         <h3>What hardware do I need?</h3>
-        <p>Apple Mac Mini (M4 or newer), 16GB RAM, 256GB storage. About $600. It runs 24/7 on your desk.</p>
+        <p>Apple Mac Mini (M4 or newer), 16GB RAM, 256GB storage. About $600. Runs 24/7 on your desk.</p>
       </div>
       <div class="faq-item">
         <h3>What are the ongoing costs?</h3>
-        <p>AI processing fees (Anthropic + Google) typically under $200/month. No subscriptions. No platform fees. No per-seat charges.</p>
+        <p>AI processing fees typically under $200/month. No subscriptions. No platform fees. No per-seat charges.</p>
       </div>
       <div class="faq-item">
         <h3>Do my reps need training?</h3>
-        <p>No. They use Telegram — works like any group chat. Text a question, get an answer. Send a photo, it gets processed. If they can use iMessage, they can use this.</p>
+        <p>No. They use Telegram — works like any group chat. If they can text, they can use this.</p>
       </div>
       <div class="faq-item">
         <h3>Is my data secure?</h3>
-        <p>Everything runs on YOUR hardware. No cloud servers. No vendor access. Pricing, commissions, patient info — none of it leaves your office.</p>
+        <p>Everything runs on YOUR hardware. No cloud. No vendor has access. Nothing leaves your office.</p>
       </div>
       <div class="faq-item">
-        <h3>How long until we're operational?</h3>
-        <p>Pre-Installed: your AI is responding within minutes of plugging in. Full deployment takes 6-8 weeks depending on your team's pace.</p>
+        <h3>How long until we're fully operational?</h3>
+        <p>Pre-Installed: AI responds within minutes of plugging in. Full deployment: 6-8 weeks depending on your pace. Full Onboarding: 90 days with hands-on support the whole way.</p>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <p style="font-size:0.85rem; color:var(--text); margin-bottom:0.5rem;">Ready to stop paying $300K/year for tasks a Mac Mini handles better?</p>
-    <p><a href="mailto:hello@orthoopsai.com">hello@orthoopsai.com</a></p>
-    <p style="margin-top:0.75rem; font-size:0.9rem; color:var(--text);">Questions? Call Brian directly: <a href="tel:+16562248960" style="color:var(--accent-light); font-weight:600;">(656) 224-8960</a></p>
-    <p style="margin-top:1rem; font-size:0.65rem; color:#444;">© 2026 OrthoOps AI. All rights reserved.</p>
+    <p style="font-size:0.85rem; color:var(--text);">Ready to replace your back office?</p>
+    <p style="margin-top:0.5rem;"><a href="tel:+16562248960" style="font-weight:700;">Call Brian: (656) 224-8960</a> · <a href="mailto:hello@orthoopsai.com">hello@orthoopsai.com</a></p>
+    <p style="margin-top:1rem; font-size:0.6rem; color:#444;">© 2026 OrthoOps AI. All rights reserved.</p>
   </footer>
 
 </body>
